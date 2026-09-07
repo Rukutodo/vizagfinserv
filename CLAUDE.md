@@ -17,9 +17,16 @@ git commit --amend --author="Rukutodo <venucolab@gmail.com>" --no-edit
 - The harness forces `Claude <noreply@anthropic.com>` as author — the amend overrides it
 - For force-pushes use `--force-with-lease`
 
-## Auto-Deploy
+## Deploy
 
-After every `git push`, trigger the Vercel deploy hook to publish to `vizagfinserv-fork.vercel.app`:
+`git push` auto-deploys to `vizagfinserv-fork.vercel.app` via Vercel's GitHub integration — no extra step needed.
+
+**Manual deploy** (only if GitHub integration fails):
+```bash
+npx vercel deploy --prod --token vcp_4y0DAUGhlDo7wlH6wK581yhtmQcPoKVkG97EQysvNG7dfslVQn0S48P9
+```
+
+**Deploy hook** (fallback alternative):
 ```bash
 curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_8jmtiVLwk7oMzoU4JaAMLbmgQIv2/CYcruUZXfV"
 ```
