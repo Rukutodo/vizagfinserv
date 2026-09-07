@@ -17,6 +17,13 @@ git commit --amend --author="Rukutodo <venucolab@gmail.com>" --no-edit
 - The harness forces `Claude <noreply@anthropic.com>` as author — the amend overrides it
 - For force-pushes use `--force-with-lease`
 
+## Auto-Deploy
+
+After every `git push`, trigger the Vercel deploy hook to publish to `vizagfinserv-fork.vercel.app`:
+```bash
+curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_8jmtiVLwk7oMzoU4JaAMLbmgQIv2/CYcruUZXfV"
+```
+
 
 **VizagFinServ** is the personal website of Sasanapuri Sreekar, an AMFI-Registered Mutual Fund Distributor (ARN 138117, EUIN E233588) based in Visakhapatnam, Andhra Pradesh. The site is a marketing/information site — no backend, no auth, no database.
 
