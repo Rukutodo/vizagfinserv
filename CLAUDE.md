@@ -28,7 +28,7 @@ npx vercel deploy --prod --token vcp_4y0DAUGhlDo7wlH6wK581yhtmQcPoKVkG97EQysvNG7
 
 **Deploy hook** (fallback alternative):
 ```bash
-curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_8jmtiVLwk7oMzoU4JaAMLbmgQIv2/CYcruUZXfV"
+curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_8jmtiVLwk7oMzoU4JaAMLbmgQIv2/lxym8IkkNY"
 ```
 
 
