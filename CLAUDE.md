@@ -23,8 +23,9 @@ git commit --amend --author="Rukutodo <venucolab@gmail.com>" --no-edit
 
 **Manual deploy** (only if GitHub integration fails):
 ```bash
-npx vercel deploy --prod --token vcp_4y0DAUGhlDo7wlH6wK581yhtmQcPoKVkG97EQysvNG7dfslVQn0S48P9
+npx vercel deploy --prod --token <VERCEL_TOKEN>
 ```
+_(token stored in Vercel project env — ask the project owner)_
 
 **Deploy hook** (fallback alternative):
 ```bash
