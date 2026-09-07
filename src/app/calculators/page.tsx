@@ -110,9 +110,9 @@ export default function CalculatorsPage() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-          className="bg-brand-900/80 backdrop-blur-md rounded-2xl p-3 md:p-4 shadow-xl border border-white/10 max-w-6xl mx-auto mb-10 overflow-x-auto"
+          className="bg-brand-900/80 backdrop-blur-md rounded-2xl p-3 md:p-4 shadow-xl border border-white/10 max-w-6xl mx-auto mb-10"
         >
-          <div className="flex items-center gap-1.5 md:gap-2 min-w-max">
+          <div className="flex items-center flex-wrap gap-1.5 md:gap-2">
             {tabs.map((tab, i) => {
               const isActive = activeTab === tab.id;
               return (
