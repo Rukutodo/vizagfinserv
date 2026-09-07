@@ -112,7 +112,7 @@ export default function CalculatorsPage() {
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           className="bg-brand-900/80 backdrop-blur-md rounded-2xl p-3 md:p-4 shadow-xl border border-white/10 max-w-6xl mx-auto mb-10"
         >
-          <div className="flex items-center flex-wrap gap-1.5 md:gap-2 justify-evenly">
+          <div className="grid grid-cols-3 lg:grid-cols-7 gap-1.5 md:gap-2">
             {tabs.map((tab, i) => {
               const isActive = activeTab === tab.id;
               return (
@@ -124,7 +124,7 @@ export default function CalculatorsPage() {
                   whileHover={{ y: -1 }}
                   whileTap={{ scale: 0.97 }}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex-1 flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                  className={`flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 cursor-pointer ${
                     isActive
                       ? "bg-brand-300 text-brand-950 shadow-lg shadow-brand-300/20 font-bold"
                       : "text-brand-200/80 bg-white/5 hover:bg-white/10 hover:text-white border border-white/10"
