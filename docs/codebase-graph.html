@@ -1,0 +1,616 @@
+<title>vizagfinserv Structure</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #07111f;
+    --surface: #0e1d2e;
+    --surface2: #142539;
+    --border: #1c3048;
+    --text: #c8d8e8;
+    --muted: #4a6880;
+    --c-root: #f0b429;
+    --c-dir: #1da89e;
+    --c-page: #4d9ef7;
+    --c-shared: #72c9e0;
+    --c-section: #38c97a;
+    --c-calculator: #f87533;
+    --c-ui: #a78bfa;
+    --c-asset: #5a7a95;
+    --link-hi: rgba(255,255,255,0.08);
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #eef3f9;
+      --surface: #ffffff;
+      --surface2: #dde7f2;
+      --border: #b8cfe2;
+      --text: #0f1f30;
+      --muted: #4a6e88;
+      --link-hi: rgba(0,0,0,0.1);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #07111f;
+    --surface: #0e1d2e;
+    --surface2: #142539;
+    --border: #1c3048;
+    --text: #c8d8e8;
+    --muted: #4a6880;
+    --link-hi: rgba(255,255,255,0.08);
+  }
+  :root[data-theme="light"] {
+    --bg: #eef3f9;
+    --surface: #ffffff;
+    --surface2: #dde7f2;
+    --border: #b8cfe2;
+    --text: #0f1f30;
+    --muted: #4a6e88;
+    --link-hi: rgba(0,0,0,0.1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .project-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--c-root);
+    letter-spacing: -0.01em;
+  }
+
+  .project-meta {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-style: italic;
+  }
+
+  .legend {
+    display: flex;
+    gap: 14px;
+    margin-left: auto;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.04em;
+  }
+
+  .legend-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  #graph-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+  }
+
+  #graph-container:active { cursor: grabbing; }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .link-normal {
+    fill: none;
+    stroke: var(--link-hi);
+    stroke-width: 1.5;
+  }
+
+  .link-usage {
+    fill: none;
+    stroke: rgba(255,255,255,0.04);
+    stroke-width: 1;
+    stroke-dasharray: 3 4;
+  }
+
+  .node-circle {
+    cursor: pointer;
+    transition: r 0.15s;
+  }
+
+  .node-label {
+    font-family: 'DM Mono', monospace;
+    fill: var(--text);
+    pointer-events: none;
+    dominant-baseline: middle;
+  }
+
+  .hint {
+    position: absolute;
+    bottom: 54px;
+    left: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    pointer-events: none;
+    font-style: italic;
+  }
+
+  .tooltip {
+    position: absolute;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 9px 13px;
+    font-family: 'DM Mono', monospace;
+    color: var(--text);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.12s;
+    z-index: 10;
+    min-width: 140px;
+  }
+
+  .tooltip.visible { opacity: 1; }
+
+  .tt-type {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+
+  .tt-name {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .stats-bar {
+    padding: 9px 20px;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    display: flex;
+    gap: 28px;
+    flex-shrink: 0;
+    align-items: center;
+  }
+
+  .stat {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .stat-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .reset-btn {
+    margin-left: auto;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .reset-btn:hover {
+    color: var(--text);
+    border-color: var(--muted);
+  }
+</style>
+
+<header>
+  <div class="brand">
+    <span class="project-name">vizagfinserv</span>
+    <span class="project-meta">Next.js 16 · React 19 · Tailwind v4 · Framer Motion</span>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#f0b429"></div>root</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#1da89e"></div>directory</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#4d9ef7"></div>page</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#38c97a"></div>section</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f87533"></div>calculator</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div>ui</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#5a7a95"></div>asset</div>
+  </div>
+</header>
+
+<div id="graph-container">
+  <svg id="graph"></svg>
+  <div class="tooltip" id="tooltip">
+    <div class="tt-type" id="tt-type"></div>
+    <div class="tt-name" id="tt-name"></div>
+  </div>
+  <div class="hint">drag nodes · scroll to zoom · hover to highlight</div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat"><span class="stat-value">95</span><span class="stat-label">files</span></div>
+  <div class="stat"><span class="stat-value">10</span><span class="stat-label">pages</span></div>
+  <div class="stat"><span class="stat-value">25</span><span class="stat-label">components</span></div>
+  <div class="stat"><span class="stat-value">6</span><span class="stat-label">calculators</span></div>
+  <div class="stat"><span class="stat-value">37</span><span class="stat-label">AMC logos</span></div>
+  <button class="reset-btn" id="reset-btn">reset view</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const colorMap = {
+  root:       "#f0b429",
+  dir:        "#1da89e",
+  page:       "#4d9ef7",
+  shared:     "#72c9e0",
+  section:    "#38c97a",
+  calculator: "#f87533",
+  ui:         "#a78bfa",
+  asset:      "#5a7a95",
+};
+
+const nodes = [
+  { id: "root",         label: "vizagfinserv",         type: "root",       r: 19 },
+
+  { id: "src",          label: "src/",                 type: "dir",        r: 14 },
+  { id: "public",       label: "public/",              type: "dir",        r: 12 },
+  { id: "cfg",          label: "next.config.ts",       type: "dir",        r: 9  },
+
+  { id: "app",          label: "app/",                 type: "dir",        r: 13 },
+  { id: "comps",        label: "components/",          type: "dir",        r: 13 },
+
+  { id: "dir-sec",      label: "sections/",            type: "dir",        r: 11 },
+  { id: "dir-calc",     label: "calculators/",         type: "dir",        r: 11 },
+  { id: "dir-ui",       label: "ui/",                  type: "dir",        r: 11 },
+
+  { id: "dir-images",   label: "images/",              type: "dir",        r: 10 },
+  { id: "dir-logos",    label: "logos/",               type: "dir",        r: 10 },
+  { id: "dir-amc",      label: "amc-logos/",           type: "dir",        r: 10 },
+
+  // Pages
+  { id: "p-layout",     label: "layout.tsx",           type: "page",       r: 9  },
+  { id: "p-home",       label: "page.tsx",             type: "page",       r: 9  },
+  { id: "p-about",      label: "about/",               type: "page",       r: 9  },
+  { id: "p-services",   label: "services/",            type: "page",       r: 9  },
+  { id: "p-contact",    label: "contact/",             type: "page",       r: 9  },
+  { id: "p-approach",   label: "our-approach/",        type: "page",       r: 9  },
+  { id: "p-resources",  label: "resources/",           type: "page",       r: 9  },
+  { id: "p-calcs",      label: "calculators/",         type: "page",       r: 9  },
+  { id: "p-sip",        label: "sip-calculator/",      type: "page",       r: 7  },
+  { id: "p-emi",        label: "emi-calculator/",      type: "page",       r: 7  },
+  { id: "p-swp",        label: "swp-calculator/",      type: "page",       r: 7  },
+  { id: "p-inflation",  label: "inflation-calc/",      type: "page",       r: 7  },
+  { id: "p-retirement", label: "retirement-calc/",     type: "page",       r: 7  },
+  { id: "p-stepup",     label: "step-up-calc/",        type: "page",       r: 7  },
+
+  // Shared
+  { id: "c-header",     label: "Header.tsx",           type: "shared",     r: 9  },
+  { id: "c-footer",     label: "Footer.tsx",           type: "shared",     r: 9  },
+  { id: "c-placeholder",label: "PlaceholderPage.tsx",  type: "shared",     r: 8  },
+
+  // Sections
+  { id: "s-hero",       label: "HeroSection",          type: "section",    r: 8  },
+  { id: "s-about",      label: "AboutSreekar",         type: "section",    r: 8  },
+  { id: "s-associate",  label: "AssociateWith",        type: "section",    r: 8  },
+  { id: "s-snapshot",   label: "BusinessSnapshot",     type: "section",    r: 8  },
+  { id: "s-cta",        label: "FinalCTA",             type: "section",    r: 8  },
+  { id: "s-how",        label: "HowWeWork",            type: "section",    r: 8  },
+  { id: "s-philosophy", label: "InvestmentPhilosophy", type: "section",    r: 8  },
+  { id: "s-principles", label: "OurPrinciples",        type: "section",    r: 8  },
+  { id: "s-services",   label: "ServicesSection",      type: "section",    r: 8  },
+  { id: "s-why",        label: "WhyWorkWithUs",        type: "section",    r: 8  },
+
+  // Calculators
+  { id: "cc-sip",       label: "SIPCalculator",        type: "calculator", r: 8  },
+  { id: "cc-emi",       label: "EMICalculator",        type: "calculator", r: 8  },
+  { id: "cc-swp",       label: "SWPCalculator",        type: "calculator", r: 8  },
+  { id: "cc-inflation", label: "InflationCalculator",  type: "calculator", r: 8  },
+  { id: "cc-retirement",label: "RetirementCalculator", type: "calculator", r: 8  },
+  { id: "cc-stepup",    label: "StepUpCalculator",     type: "calculator", r: 8  },
+
+  // UI
+  { id: "u-button",     label: "Button",               type: "ui",         r: 7  },
+  { id: "u-icons",      label: "Icons",                type: "ui",         r: 7  },
+  { id: "u-pcard",      label: "PrincipleCard",        type: "ui",         r: 7  },
+  { id: "u-step",       label: "ProcessStep",          type: "ui",         r: 7  },
+  { id: "u-heading",    label: "SectionHeading",       type: "ui",         r: 7  },
+  { id: "u-wrapper",    label: "SectionWrapper",       type: "ui",         r: 7  },
+
+  // Assets
+  { id: "a-images",     label: "4 hero images",        type: "asset",      r: 8  },
+  { id: "a-logos",      label: "20 AMC logos",         type: "asset",      r: 8  },
+  { id: "a-amc",        label: "18 AMC logos (opt)",   type: "asset",      r: 8  },
+];
+
+const links = [
+  // Root
+  { source: "root", target: "src"    },
+  { source: "root", target: "public" },
+  { source: "root", target: "cfg"    },
+
+  // src
+  { source: "src", target: "app"   },
+  { source: "src", target: "comps" },
+
+  // app → pages
+  { source: "app", target: "p-layout"    },
+  { source: "app", target: "p-home"      },
+  { source: "app", target: "p-about"     },
+  { source: "app", target: "p-services"  },
+  { source: "app", target: "p-contact"   },
+  { source: "app", target: "p-approach"  },
+  { source: "app", target: "p-resources" },
+  { source: "app", target: "p-calcs"     },
+
+  // calculator sub-pages
+  { source: "p-calcs", target: "p-sip"        },
+  { source: "p-calcs", target: "p-emi"        },
+  { source: "p-calcs", target: "p-swp"        },
+  { source: "p-calcs", target: "p-inflation"  },
+  { source: "p-calcs", target: "p-retirement" },
+  { source: "p-calcs", target: "p-stepup"     },
+
+  // components
+  { source: "comps", target: "dir-sec"      },
+  { source: "comps", target: "dir-calc"     },
+  { source: "comps", target: "dir-ui"       },
+  { source: "comps", target: "c-header"     },
+  { source: "comps", target: "c-footer"     },
+  { source: "comps", target: "c-placeholder"},
+
+  // sections
+  { source: "dir-sec", target: "s-hero"       },
+  { source: "dir-sec", target: "s-about"      },
+  { source: "dir-sec", target: "s-associate"  },
+  { source: "dir-sec", target: "s-snapshot"   },
+  { source: "dir-sec", target: "s-cta"        },
+  { source: "dir-sec", target: "s-how"        },
+  { source: "dir-sec", target: "s-philosophy" },
+  { source: "dir-sec", target: "s-principles" },
+  { source: "dir-sec", target: "s-services"   },
+  { source: "dir-sec", target: "s-why"        },
+
+  // calculator comps
+  { source: "dir-calc", target: "cc-sip"        },
+  { source: "dir-calc", target: "cc-emi"        },
+  { source: "dir-calc", target: "cc-swp"        },
+  { source: "dir-calc", target: "cc-inflation"  },
+  { source: "dir-calc", target: "cc-retirement" },
+  { source: "dir-calc", target: "cc-stepup"     },
+
+  // ui comps
+  { source: "dir-ui", target: "u-button"  },
+  { source: "dir-ui", target: "u-icons"   },
+  { source: "dir-ui", target: "u-pcard"   },
+  { source: "dir-ui", target: "u-step"    },
+  { source: "dir-ui", target: "u-heading" },
+  { source: "dir-ui", target: "u-wrapper" },
+
+  // public
+  { source: "public", target: "dir-images" },
+  { source: "public", target: "dir-logos"  },
+  { source: "public", target: "dir-amc"    },
+
+  // assets
+  { source: "dir-images", target: "a-images" },
+  { source: "dir-logos",  target: "a-logos"  },
+  { source: "dir-amc",    target: "a-amc"    },
+
+  // usage cross-links
+  { source: "p-sip",        target: "cc-sip",        usage: true },
+  { source: "p-emi",        target: "cc-emi",        usage: true },
+  { source: "p-swp",        target: "cc-swp",        usage: true },
+  { source: "p-inflation",  target: "cc-inflation",  usage: true },
+  { source: "p-retirement", target: "cc-retirement", usage: true },
+  { source: "p-stepup",     target: "cc-stepup",     usage: true },
+  { source: "p-home",       target: "s-hero",        usage: true },
+  { source: "p-home",       target: "s-snapshot",    usage: true },
+  { source: "p-home",       target: "s-services",    usage: true },
+  { source: "p-home",       target: "s-cta",         usage: true },
+  { source: "p-layout",     target: "c-header",      usage: true },
+  { source: "p-layout",     target: "c-footer",      usage: true },
+];
+
+const svg = d3.select("#graph");
+const container = document.getElementById("graph-container");
+let W = container.clientWidth;
+let H = container.clientHeight;
+
+const g = svg.append("g");
+
+const zoom = d3.zoom()
+  .scaleExtent([0.25, 4])
+  .on("zoom", ev => g.attr("transform", ev.transform));
+svg.call(zoom);
+
+// Arrowhead marker for usage links
+svg.append("defs").append("marker")
+  .attr("id", "arrow")
+  .attr("viewBox", "0 -4 8 8")
+  .attr("refX", 18).attr("refY", 0)
+  .attr("markerWidth", 5).attr("markerHeight", 5)
+  .attr("orient", "auto")
+  .append("path")
+  .attr("d", "M0,-4L8,0L0,4")
+  .attr("fill", "rgba(255,255,255,0.12)");
+
+const simulation = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id)
+    .distance(d => {
+      if (d.usage) return 130;
+      const s = nodes.find(n => n.id === (d.source.id || d.source));
+      const t = nodes.find(n => n.id === (d.target.id || d.target));
+      if (!s || !t) return 80;
+      if (s.type === "root") return 130;
+      if (s.type === "dir" && t.type === "dir") return 90;
+      return 65;
+    })
+    .strength(d => d.usage ? 0.04 : 0.55))
+  .force("charge", d3.forceManyBody().strength(d => -d.r * 22))
+  .force("center", d3.forceCenter(W / 2, H / 2))
+  .force("collision", d3.forceCollide().radius(d => d.r + 14).iterations(2));
+
+const linkSel = g.append("g")
+  .selectAll("line")
+  .data(links)
+  .join("line")
+  .attr("class", d => d.usage ? "link-usage" : "link-normal")
+  .attr("marker-end", d => d.usage ? "url(#arrow)" : null);
+
+const nodeSel = g.append("g")
+  .selectAll("g")
+  .data(nodes)
+  .join("g")
+  .call(d3.drag()
+    .on("start", (ev) => {
+      if (!ev.active) simulation.alphaTarget(0.3).restart();
+      ev.subject.fx = ev.subject.x;
+      ev.subject.fy = ev.subject.y;
+    })
+    .on("drag", (ev) => {
+      ev.subject.fx = ev.x;
+      ev.subject.fy = ev.y;
+    })
+    .on("end", (ev) => {
+      if (!ev.active) simulation.alphaTarget(0);
+      ev.subject.fx = null;
+      ev.subject.fy = null;
+    }));
+
+nodeSel.append("circle")
+  .attr("class", "node-circle")
+  .attr("r", d => d.r)
+  .attr("fill", d => colorMap[d.type] + "1e")
+  .attr("stroke", d => colorMap[d.type])
+  .attr("stroke-width", 1.8)
+  .on("mouseover", function(ev, d) {
+    showTooltip(ev, d);
+    d3.select(this).attr("fill", colorMap[d.type] + "44").attr("r", d.r + 2);
+    const nodeId = d.id;
+    linkSel.each(function(l) {
+      const sid = l.source.id || l.source;
+      const tid = l.target.id || l.target;
+      const connected = sid === nodeId || tid === nodeId;
+      d3.select(this)
+        .style("stroke", connected ? colorMap[d.type] : null)
+        .style("stroke-width", connected ? 2 : null)
+        .style("opacity", connected ? 1 : 0.25);
+    });
+    nodeSel.each(function(n) {
+      if (n.id === nodeId) return;
+      const connected = links.some(l => {
+        const sid = l.source.id || l.source;
+        const tid = l.target.id || l.target;
+        return (sid === nodeId && tid === n.id) || (tid === nodeId && sid === n.id);
+      });
+      d3.select(this).style("opacity", connected ? 1 : 0.35);
+    });
+  })
+  .on("mousemove", positionTooltip)
+  .on("mouseout", function(ev, d) {
+    hideTooltip();
+    d3.select(this).attr("fill", colorMap[d.type] + "1e").attr("r", d.r);
+    linkSel.style("stroke", null).style("stroke-width", null).style("opacity", null);
+    nodeSel.style("opacity", null);
+  });
+
+nodeSel.append("text")
+  .attr("class", "node-label")
+  .attr("x", d => d.r + 5)
+  .attr("y", 0)
+  .attr("font-size", d => d.type === "root" ? "11px" : "9px")
+  .attr("font-weight", d => ["root","dir"].includes(d.type) ? "500" : "400")
+  .text(d => d.label);
+
+const tooltip = document.getElementById("tooltip");
+const ttType = document.getElementById("tt-type");
+const ttName = document.getElementById("tt-name");
+
+function showTooltip(ev, d) {
+  ttType.textContent = d.type;
+  ttName.textContent = d.label;
+  ttName.style.color = colorMap[d.type];
+  tooltip.classList.add("visible");
+  positionTooltip(ev);
+}
+
+function positionTooltip(ev) {
+  const rect = container.getBoundingClientRect();
+  let x = ev.clientX - rect.left + 16;
+  let y = ev.clientY - rect.top - 12;
+  if (x + 180 > rect.width) x = ev.clientX - rect.left - 195;
+  tooltip.style.left = x + "px";
+  tooltip.style.top  = y + "px";
+}
+
+function hideTooltip() {
+  tooltip.classList.remove("visible");
+}
+
+simulation.on("tick", () => {
+  linkSel
+    .attr("x1", d => d.source.x)
+    .attr("y1", d => d.source.y)
+    .attr("x2", d => d.target.x)
+    .attr("y2", d => d.target.y);
+  nodeSel.attr("transform", d => `translate(${d.x},${d.y})`);
+});
+
+document.getElementById("reset-btn").addEventListener("click", () => {
+  svg.transition().duration(500).call(
+    zoom.transform,
+    d3.zoomIdentity.translate(W / 2, H / 2).scale(1).translate(-W / 2, -H / 2)
+  );
+});
+
+window.addEventListener("resize", () => {
+  W = container.clientWidth;
+  H = container.clientHeight;
+  simulation.force("center", d3.forceCenter(W / 2, H / 2)).alpha(0.2).restart();
+});
+</script>
