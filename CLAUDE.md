@@ -4,11 +4,18 @@
 
 ## Commit Convention
 
-End every commit message with:
+After every commit, immediately amend the author:
+```bash
+git commit -m "your message
+
+Committed from mobile session"
+git commit --amend --author="Rukutodo <venucolab@gmail.com>" --no-edit
 ```
-Committed from mobile session
-```
-Do **not** include `Co-Authored-By` or `Claude-Session` lines.
+
+- End every commit message with `Committed from mobile session`
+- Do **not** include `Co-Authored-By` or `Claude-Session` lines
+- The harness forces `Claude <noreply@anthropic.com>` as author — the amend overrides it
+- For force-pushes use `--force-with-lease`
 
 
 **VizagFinServ** is the personal website of Sasanapuri Sreekar, an AMFI-Registered Mutual Fund Distributor (ARN 138117, EUIN E233588) based in Visakhapatnam, Andhra Pradesh. The site is a marketing/information site — no backend, no auth, no database.
