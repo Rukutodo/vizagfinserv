@@ -5,11 +5,13 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_ITEMS, CONTACT } from '@/lib/constants';
 import Button from '@/components/ui/Button';
-import { MenuIcon, XIcon } from '@/components/ui/Icons';
+import { MenuIcon, XIcon, SunIcon, MoonIcon } from '@/components/ui/Icons';
+import { useTheme } from '@/components/ThemeProvider';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,9 +36,9 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
-        isScrolled 
-          ? 'bg-white/65 backdrop-blur-xl border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.06)]' 
-          : 'bg-white border-neutral-100'
+        isScrolled
+          ? 'bg-white/65 dark:bg-brand-950/90 backdrop-blur-xl border-white/20 dark:border-brand-800/50 shadow-[0_8px_30px_rgb(0,0,0,0.06)]'
+          : 'bg-white dark:bg-brand-950 border-neutral-100 dark:border-brand-800'
       }`}
     >
       <div className="container-narrow">
@@ -47,7 +49,7 @@ export default function Header() {
             className="flex flex-col justify-center group transform transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]" 
             onClick={() => setIsOpen(false)}
           >
-            <span className="text-lg md:text-xl font-bold text-brand-900 font-heading tracking-tight leading-tight">
+            <span className="text-lg md:text-xl font-bold text-brand-900 dark:text-brand-100 font-heading tracking-tight leading-tight">
               VizagFinServ
             </span>
           </Link>
@@ -58,7 +60,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative inline-block px-3 py-2 text-sm font-medium text-neutral-700 hover:text-brand-900 transition-all duration-300 group hover:-translate-y-0.5"
+                className="relative inline-block px-3 py-2 text-sm font-medium text-neutral-700 dark:text-brand-300 hover:text-brand-900 dark:hover:text-white transition-all duration-300 group hover:-translate-y-0.5"
               >
                 {item.label}
                 <span className="absolute bottom-1 left-3 right-3 h-[2px] bg-brand-800 origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 rounded-full" />
@@ -76,10 +78,19 @@ export default function Header() {
               Start a Conversation
             </Button>
 
+            {/* Dark mode toggle */}
+            <button
+              onClick={toggle}
+              className="p-2 rounded-lg text-brand-700 dark:text-brand-300 hover:bg-brand-50 dark:hover:bg-brand-800 transition-colors cursor-pointer"
+              aria-label="Toggle dark mode"
+            >
+              {theme === 'dark' ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
+            </button>
+
             {/* Mobile hamburger */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-brand-900 hover:bg-brand-50 rounded-lg transition-colors cursor-pointer"
+              className="lg:hidden p-2 text-brand-900 dark:text-brand-200 hover:bg-brand-50 dark:hover:bg-brand-800 rounded-lg transition-colors cursor-pointer"
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
             >
@@ -97,7 +108,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden overflow-hidden bg-white border-t border-neutral-100"
+            className="lg:hidden overflow-hidden bg-white dark:bg-brand-950 border-t border-neutral-100 dark:border-brand-800"
           >
             <nav className="container-narrow py-6 flex flex-col gap-1" aria-label="Mobile navigation">
               {NAV_ITEMS.map((item, i) => (
@@ -110,13 +121,13 @@ export default function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 text-base font-medium text-neutral-700 hover:text-brand-800 hover:bg-brand-50/60 rounded-lg transition-colors"
+                    className="block px-4 py-3 text-base font-medium text-neutral-700 dark:text-brand-300 hover:text-brand-800 dark:hover:text-white hover:bg-brand-50/60 dark:hover:bg-brand-800/60 rounded-lg transition-colors"
                   >
                     {item.label}
                   </Link>
                 </motion.div>
               ))}
-              <div className="pt-4 px-4 border-t border-neutral-100 mt-2">
+              <div className="pt-4 px-4 border-t border-neutral-100 dark:border-brand-800 mt-2">
                 <Button href="/contact" className="w-full" onClick={() => setIsOpen(false)}>
                   Start a Conversation
                 </Button>

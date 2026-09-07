@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Use [data-theme=dark] attribute for dark mode instead of prefers-color-scheme */
+@variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme inline {
   --color-brand-950: #0A1E36;
   --color-brand-900: #0F2A4A;

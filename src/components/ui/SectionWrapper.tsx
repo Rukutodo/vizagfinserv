@@ -11,9 +11,9 @@ interface SectionWrapperProps {
 }
 
 const bgClasses: Record<string, string> = {
-  white: 'bg-white',
-  light: 'bg-neutral-50',
-  brand: 'bg-brand-50',
+  white: 'bg-white dark:bg-brand-900',
+  light: 'bg-neutral-50 dark:bg-brand-950',
+  brand: 'bg-brand-50 dark:bg-brand-900',
   dark: 'bg-brand-950 text-white',
 };
 
