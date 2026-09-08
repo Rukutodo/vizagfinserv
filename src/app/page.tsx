@@ -7,6 +7,8 @@ import ServicesSection from '@/components/sections/ServicesSection';
 import WhyWorkWithUs from '@/components/sections/WhyWorkWithUs';
 import AboutSreekar from '@/components/sections/AboutSreekar';
 import HowWeWork from '@/components/sections/HowWeWork';
+import Testimonials from '@/components/sections/Testimonials';
+import FAQ from '@/components/sections/FAQ';
 import FinalCTA from '@/components/sections/FinalCTA';
 
 export default function HomePage() {
@@ -21,6 +23,8 @@ export default function HomePage() {
       <WhyWorkWithUs />
       <AboutSreekar />
       <HowWeWork />
+      <Testimonials />
+      <FAQ />
       <FinalCTA />
     </>
   );

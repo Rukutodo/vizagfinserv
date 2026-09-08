@@ -48,22 +48,22 @@ export default function ServiceCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
-      className={`group relative p-6 md:p-7 rounded-xl border transition-all duration-300 ${
+      className={`group relative p-5 md:p-6 rounded-2xl border transition-transform duration-300 ${
         variant === 'primary'
-          ? 'bg-white border-neutral-200 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-100/50'
-          : 'bg-brand-50/50 border-brand-100 hover:border-brand-200 hover:shadow-md'
+          ? 'bg-white border-brand-900 shadow-xl shadow-brand-900/10 hover:-translate-y-1'
+          : 'bg-white border-brand-200 shadow-lg shadow-brand-900/5 hover:-translate-y-1'
       }`}
     >
       <div
-        className={`w-11 h-11 rounded-lg flex items-center justify-center mb-4 transition-colors duration-300 ${
+        className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${
           variant === 'primary'
-            ? 'bg-brand-50 text-brand-700 group-hover:bg-brand-100'
-            : 'bg-brand-100 text-brand-600'
+            ? 'bg-brand-900 text-white'
+            : 'bg-brand-800 text-white shadow-sm'
         }`}
       >
         <IconComponent className="w-5 h-5" />
       </div>
-      <h3 className="text-lg font-semibold text-brand-900 mb-2">{title}</h3>
+      <h3 className="text-base md:text-lg font-semibold text-brand-900 mb-2">{title}</h3>
       <p className="text-sm text-neutral-600 leading-relaxed">{description}</p>
       {note && (
         <span className="inline-block mt-3 text-xs font-medium text-brand-600 bg-brand-50 px-3 py-1 rounded-full">

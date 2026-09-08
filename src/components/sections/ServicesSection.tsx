@@ -13,7 +13,10 @@ import {
 
 export default function ServicesSection() {
   return (
-    <SectionWrapper background="white" id="services">
+    <SectionWrapper background="white" id="services" className="relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-40 right-0 w-96 h-96 bg-brand-50/50 rounded-full blur-[100px] -z-10" />
+      <div className="absolute bottom-40 left-0 w-96 h-96 bg-brand-50/50 rounded-full blur-[100px] -z-10" />
       <SectionHeading
         eyebrow="What We Do"
         title="Services"
@@ -28,7 +31,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="text-lg font-semibold text-brand-800 mb-5"
         >
-          Mutual Fund & Goal-Based Investing
+          Goal-Based Investing
         </motion.h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {PRIMARY_SERVICES.map((service, i) => (
@@ -49,16 +52,18 @@ export default function ServicesSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="mb-10 p-5 md:p-6 bg-neutral-50 rounded-xl border border-neutral-100"
+        className="mb-16 p-6 md:p-8 bg-white rounded-2xl border border-neutral-200 shadow-sm relative overflow-hidden group hover:border-brand-200 transition-colors duration-300"
       >
-        <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-500 mb-3">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-50 rounded-full blur-3xl -z-10 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+        <h4 className="text-sm font-bold uppercase tracking-widest text-brand-900 mb-5 flex items-center gap-2">
+          <span className="w-8 h-px bg-brand-900/20"></span>
           Supporting Services
         </h4>
-        <ul className="flex flex-wrap gap-3">
+        <ul className="flex flex-wrap gap-2 md:gap-3">
           {SUPPORTING_SERVICES.map((service) => (
             <li
               key={service}
-              className="text-sm text-neutral-600 bg-white px-4 py-2 rounded-lg border border-neutral-200"
+              className="text-sm font-medium text-white bg-brand-900 px-4 py-2 md:px-5 md:py-2.5 rounded-full border border-brand-900 shadow-md transition-transform duration-300 hover:-translate-y-0.5 cursor-default"
             >
               {service}
             </li>
@@ -72,7 +77,7 @@ export default function ServicesSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-lg font-semibold text-neutral-700 mb-5"
+          className="text-xl font-semibold text-brand-900 mb-6 flex items-center gap-3"
         >
           Additional Services
         </motion.h3>
@@ -92,8 +97,8 @@ export default function ServicesSection() {
       </div>
 
       {/* CTA */}
-      <div className="text-center">
-        <Button href="/services" variant="outline">
+      <div className="text-center mt-12">
+        <Button href="/services" variant="primary" className="bg-brand-900 text-white hover:bg-brand-800 hover:shadow-lg hover:shadow-brand-900/20 px-8 py-3 rounded-full transition-all duration-300">
           View All Services
         </Button>
       </div>
