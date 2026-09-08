@@ -24,7 +24,7 @@ export default function InflationCalculator() {
         width: 18px; 
         height: 18px; 
         border-radius: 50%; 
-        background: #0F2A4A; 
+        background: #89B8E3; 
         border: 2px solid white; 
         box-shadow: 0 1px 4px rgba(0,0,0,0.3); 
         cursor: pointer; 
@@ -33,7 +33,7 @@ export default function InflationCalculator() {
         width: 18px; 
         height: 18px; 
         border-radius: 50%; 
-        background: #0F2A4A; 
+        background: #89B8E3; 
         border: 2px solid white; 
         box-shadow: 0 1px 4px rgba(0,0,0,0.3); 
         cursor: pointer; 
@@ -56,7 +56,7 @@ export default function InflationCalculator() {
 
   const sliderTrackBg = (value: number, min: number, max: number) => {
     const pct = ((value - min) / (max - min)) * 100;
-    return `linear-gradient(to right, #0F2A4A ${pct}%, #E2E8F0 ${pct}%)`;
+    return `linear-gradient(to right, #89B8E3 ${pct}%, rgba(255, 255, 255, 0.15) ${pct}%)`;
   };
 
   return (
@@ -64,20 +64,20 @@ export default function InflationCalculator() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="bg-white rounded-3xl shadow-xl overflow-hidden border border-neutral-100 max-w-6xl mx-auto flex flex-col lg:flex-row"
+      className="overflow-hidden max-w-6xl mx-auto flex flex-col lg:flex-row gap-8"
     >
       {/* Left side: Inputs */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
-        className="lg:w-7/12 p-8 lg:p-12 space-y-8 flex flex-col justify-between"
+        className="lg:w-7/12 bg-brand-900/90 backdrop-blur-md rounded-2xl p-8 lg:p-10 border border-white/10 shadow-xl space-y-8 flex flex-col justify-between"
       >
         <div>
-          <h2 className="text-2xl font-bold text-neutral-900 mb-2 font-heading">
+          <h2 className="text-2xl font-bold text-white mb-2 font-heading">
             Inflation Calculator
           </h2>
-          <p className="text-neutral-500 text-sm mb-8">
+          <p className="text-brand-200/80 text-sm mb-8">
             Understand how inflation erodes the purchasing power of your money over time.
           </p>
 
@@ -85,10 +85,10 @@ export default function InflationCalculator() {
             {/* Input 1: Current Amount */}
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <label className="text-neutral-800 font-semibold text-sm">
+                <label className="text-brand-100 font-semibold text-sm">
                   Current Amount / Expense
                 </label>
-                <span className="bg-brand-50 text-brand-900 text-xs font-bold px-3 py-1 rounded-full">
+                <span className="bg-white/10 text-brand-300 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-white/10">
                   ₹{formatIndian(currentValue)}
                 </span>
               </div>
@@ -112,7 +112,7 @@ export default function InflationCalculator() {
                     if (!isNaN(num)) setCurrentValue(Math.min(num, 10000000));
                     else setCurrentValue(1000);
                   }}
-                  className="w-24 text-right px-3 py-1.5 text-xs font-medium text-neutral-700 bg-neutral-50 border border-neutral-200 rounded-lg outline-none focus:border-brand-600"
+                  className="w-28 text-right px-3 py-1.5 text-xs font-semibold text-white bg-white/5 border border-white/10 rounded-lg outline-none focus:border-brand-300"
                 />
               </div>
             </div>
@@ -120,10 +120,10 @@ export default function InflationCalculator() {
             {/* Input 2: Inflation Rate */}
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <label className="text-neutral-800 font-semibold text-sm">
+                <label className="text-brand-100 font-semibold text-sm">
                   Expected Inflation Rate
                 </label>
-                <span className="bg-brand-50 text-brand-900 text-xs font-bold px-3 py-1 rounded-full">
+                <span className="bg-white/10 text-brand-300 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-white/10">
                   {inflationRate}%
                 </span>
               </div>
@@ -142,7 +142,7 @@ export default function InflationCalculator() {
                   type="number"
                   value={inflationRate}
                   onChange={(e) => setInflationRate(Number(e.target.value))}
-                  className="inf-num-input w-24 text-right px-3 py-1.5 text-xs font-medium text-neutral-700 bg-neutral-50 border border-neutral-200 rounded-lg outline-none focus:border-brand-600"
+                  className="inf-num-input w-24 text-right px-3 py-1.5 text-xs font-semibold text-white bg-white/5 border border-white/10 rounded-lg outline-none focus:border-brand-300"
                 />
               </div>
             </div>
@@ -150,10 +150,10 @@ export default function InflationCalculator() {
             {/* Input 3: Years */}
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <label className="text-neutral-800 font-semibold text-sm">
+                <label className="text-brand-100 font-semibold text-sm">
                   Years in Future
                 </label>
-                <span className="bg-brand-50 text-brand-900 text-xs font-bold px-3 py-1 rounded-full">
+                <span className="bg-white/10 text-brand-300 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-white/10">
                   {years} years
                 </span>
               </div>
@@ -172,7 +172,7 @@ export default function InflationCalculator() {
                   type="number"
                   value={years}
                   onChange={(e) => setYears(Number(e.target.value))}
-                  className="inf-num-input w-24 text-right px-3 py-1.5 text-xs font-medium text-neutral-700 bg-neutral-50 border border-neutral-200 rounded-lg outline-none focus:border-brand-600"
+                  className="inf-num-input w-24 text-right px-3 py-1.5 text-xs font-semibold text-white bg-white/5 border border-white/10 rounded-lg outline-none focus:border-brand-300"
                 />
               </div>
             </div>
@@ -180,16 +180,16 @@ export default function InflationCalculator() {
         </div>
       </motion.div>
 
-      {/* Right Side: Brand Navy Panel */}
+      {/* Right Side: Brand Navy Summary Panel */}
       <motion.div
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.55, delay: 0.15, ease: "easeOut" }}
-        className="lg:w-5/12 bg-brand-900 text-white p-8 lg:p-12 flex flex-col justify-between rounded-b-3xl lg:rounded-b-none lg:rounded-r-3xl"
+        className="lg:w-5/12 bg-brand-950 text-white p-8 lg:p-10 flex flex-col justify-between rounded-2xl shadow-xl border border-white/10"
       >
         <div className="space-y-6">
           <div>
-            <span className="text-[11px] font-bold tracking-wider text-brand-200 uppercase">
+            <span className="text-[11px] font-bold tracking-wider text-brand-300 uppercase">
               FUTURE COST
             </span>
             <motion.div
@@ -197,7 +197,7 @@ export default function InflationCalculator() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="text-4xl lg:text-5xl font-extrabold tracking-tight mt-1 text-white"
+              className="text-4xl lg:text-5xl font-extrabold tracking-tight mt-1 text-white font-heading"
             >
               ₹{formatIndian(futureValue)}
             </motion.div>
@@ -207,10 +207,10 @@ export default function InflationCalculator() {
           </div>
 
           {/* Today vs Future Box */}
-          <div className="bg-brand-800/80 rounded-2xl p-5 border border-brand-700/50 space-y-4">
+          <div className="bg-brand-800/70 rounded-xl p-5 border border-brand-700/50 space-y-4">
             <div className="flex items-center justify-between">
               <div className="text-center">
-                <span className="text-[10px] text-brand-200/70 uppercase font-semibold tracking-wider block">
+                <span className="text-[10px] text-brand-300 uppercase font-semibold tracking-wider block">
                   TODAY
                 </span>
                 <span className="text-base font-bold text-white">
@@ -221,7 +221,7 @@ export default function InflationCalculator() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
               <div className="text-center">
-                <span className="text-[10px] text-brand-200/70 uppercase font-semibold tracking-wider block">
+                <span className="text-[10px] text-brand-300 uppercase font-semibold tracking-wider block">
                   IN FUTURE
                 </span>
                 <span className="text-base font-bold text-gold-400">
@@ -243,7 +243,7 @@ export default function InflationCalculator() {
           </div>
 
           {/* Table Breakdown */}
-          <div className="bg-brand-800/80 rounded-2xl p-5 border border-brand-700/50 space-y-3.5 text-xs">
+          <div className="bg-brand-800/70 rounded-xl p-5 border border-brand-700/50 space-y-3.5 text-xs">
             <div className="flex justify-between items-center text-brand-100">
               <span>Current Value</span>
               <span className="font-semibold text-white">₹{formatIndian(currentValue)}</span>
@@ -265,7 +265,7 @@ export default function InflationCalculator() {
             href="/contact"
             whileHover={{ y: -2, boxShadow: "0 12px 30px rgba(15,42,74,0.4)" }}
             transition={{ duration: 0.2 }}
-            className="w-full bg-gold-500 hover:bg-gold-600 text-white font-semibold py-3.5 px-6 rounded-xl text-center block text-sm transition-colors shadow-lg shadow-brand-950/40"
+            className="w-full bg-brand-800 hover:bg-brand-700 text-white font-semibold py-3.5 px-6 rounded-xl text-center block text-sm transition-colors border border-brand-600 shadow-md"
           >
             Beat Inflation – Invest Now →
           </motion.a>
