@@ -51,8 +51,8 @@ export default function BusinessSnapshot() {
       >
         <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-neutral-200/60">
           <AnimatedStat
-            value="Since 2017"
-            label="Years of Service"
+            value="Since 1995"
+            label="Serving Clients"
             index={0}
             icon={
               <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
@@ -62,21 +62,19 @@ export default function BusinessSnapshot() {
             }
           />
           <AnimatedStat
-            value="₹140+ Cr"
-            label="Assets Under Distribution"
+            value="30+ Years"
+            label="Collective Experience"
             index={1}
             icon={
               <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
               </svg>
             }
           />
           <AnimatedStat
-            value="100+"
-            label="Families Served"
+            value="₹140+ Cr"
+            label="Assets Under Distribution"
             index={2}
             icon={
               <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
@@ -85,14 +83,16 @@ export default function BusinessSnapshot() {
             }
           />
           <AnimatedStat
-            value="₹30L+"
-            label="Monthly SIP Book"
+            value="100+"
+            label="Families Served"
             index={3}
             isLast
             icon={
               <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <path d="M9 12l2 2 4-4" />
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
             }
           />

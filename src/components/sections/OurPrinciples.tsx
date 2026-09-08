@@ -7,11 +7,12 @@ import { PRINCIPLES } from '@/lib/constants';
 
 export default function OurPrinciples() {
   return (
-    <SectionWrapper background="brand" id="our-principles">
+    <SectionWrapper background="dark" id="our-principles">
       <SectionHeading
         eyebrow="Our Principles"
         title="What guides our approach"
         subtitle="Four principles that shape how we think about investing—rooted in discipline, patience and transparency."
+        light={true}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
@@ -22,6 +23,7 @@ export default function OurPrinciples() {
             title={principle.title}
             description={principle.description}
             index={i}
+            variant="dark"
           />
         ))}
       </div>

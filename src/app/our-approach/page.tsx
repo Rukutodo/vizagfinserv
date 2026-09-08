@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
-import PlaceholderPage from '@/components/PlaceholderPage';
+import ApproachHero from '@/components/sections/approach/ApproachHero';
+import ApproachPhilosophy from '@/components/sections/approach/ApproachPhilosophy';
+import ApproachPrinciples from '@/components/sections/approach/ApproachPrinciples';
+import ApproachProcess from '@/components/sections/approach/ApproachProcess';
+import ApproachWhyUs from '@/components/sections/approach/ApproachWhyUs';
+import ApproachCTA from '@/components/sections/approach/ApproachCTA';
 
 export const metadata: Metadata = {
   title: 'Our Approach',
@@ -9,10 +14,13 @@ export const metadata: Metadata = {
 
 export default function OurApproachPage() {
   return (
-    <PlaceholderPage
-      eyebrow="Investment Philosophy"
-      title="Our Approach"
-      description="A goal-based, disciplined approach to mutual fund investing. We focus on understanding your objectives first, choosing suitable funds second, and staying invested for the long term—not chasing short-term market movements."
-    />
+    <>
+      <ApproachHero />
+      <ApproachPhilosophy />
+      <ApproachPrinciples />
+      <ApproachProcess />
+      <ApproachWhyUs />
+      <ApproachCTA />
+    </>
   );
 }

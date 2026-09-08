@@ -1,18 +1,25 @@
 import type { Metadata } from 'next';
-import PlaceholderPage from '@/components/PlaceholderPage';
+import ServicesHero from '@/components/sections/services/ServicesHero';
+import DetailedPrimaryServices from '@/components/sections/services/DetailedPrimaryServices';
+import SupportingServices from '@/components/sections/services/SupportingServices';
+import AdditionalServices from '@/components/sections/services/AdditionalServices';
+import ServicesCTA from '@/components/sections/services/ServicesCTA';
 
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'Mutual fund distribution, goal-based SIP planning, portfolio review, STP/SWP structuring, and more. Explore our full range of services.',
+    'In-depth mutual fund distribution services including goal-based SIP planning, comprehensive portfolio reviews, STP/SWP structuring, and specialized investment funds.',
 };
 
 export default function ServicesPage() {
   return (
-    <PlaceholderPage
-      eyebrow="Our Services"
-      title="Services"
-      description="From goal-based SIP planning and fund selection to portfolio reviews and STP/SWP structuring—explore the full range of mutual fund distribution and financial services we offer."
-    />
+    <>
+      <ServicesHero />
+      <DetailedPrimaryServices />
+      <SupportingServices />
+      <AdditionalServices />
+      <ServicesCTA />
+    </>
   );
 }
+

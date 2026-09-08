@@ -33,7 +33,7 @@ export default function FinalCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               href="/contact"
-              className="bg-white text-brand-900 hover:bg-brand-50"
+              className="bg-white !text-brand-900 hover:bg-brand-50 hover:-translate-y-1 hover:shadow-xl hover:shadow-white/20 transition-all duration-300 font-semibold"
               size="lg"
             >
               Start a Conversation
@@ -42,7 +42,7 @@ export default function FinalCTA() {
               href={CONTACT.phoneHref}
               variant="ghost"
               size="lg"
-              className="text-white border border-brand-500/30 hover:bg-brand-800/50 hover:text-white"
+              className="text-white border-2 border-brand-500/30 hover:border-brand-300 hover:bg-brand-800/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
             >
               <PhoneIcon className="w-4 h-4 mr-2" />
               Call {CONTACT.phone}
