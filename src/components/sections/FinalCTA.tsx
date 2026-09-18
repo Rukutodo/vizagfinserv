@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button';
 import { CONTACT, DISCLAIMERS } from '@/lib/constants';
 import { PhoneIcon, MailIcon, MapPinIcon } from '@/components/ui/Icons';
 
-export default function FinalCTA() {
+export default function FinalCTA({ linkToPage = true }: { linkToPage?: boolean }) {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden bg-brand-900">
       {/* Background decoration */}
@@ -31,13 +31,15 @@ export default function FinalCTA() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button
-              href="/contact"
-              className="bg-white !text-brand-900 hover:bg-brand-50 hover:-translate-y-1 hover:shadow-xl hover:shadow-white/20 transition-all duration-300 font-semibold"
-              size="lg"
-            >
-              Start a Conversation
-            </Button>
+            {linkToPage && (
+              <Button
+                href="/contact"
+                className="bg-white !text-brand-900 hover:bg-brand-50 hover:-translate-y-1 hover:shadow-xl hover:shadow-white/20 transition-all duration-300 font-semibold"
+                size="lg"
+              >
+                Start a Conversation
+              </Button>
+            )}
             <Button
               href={CONTACT.phoneHref}
               variant="ghost"

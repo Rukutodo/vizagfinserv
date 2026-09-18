@@ -6,7 +6,7 @@ import SectionWrapper from '@/components/ui/SectionWrapper';
 import Button from '@/components/ui/Button';
 import { CONTACT } from '@/lib/constants';
 
-export default function AboutSreekar() {
+export default function AboutSreekar({ linkToPage = true }: { linkToPage?: boolean }) {
   return (
     <SectionWrapper background="white" id="about-sreekar">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
@@ -80,11 +80,13 @@ export default function AboutSreekar() {
             </span>
           </div>
 
-          <div className="mt-8">
-            <Button href="/about" variant="secondary">
-              About Us
-            </Button>
-          </div>
+          {linkToPage && (
+            <div className="mt-8">
+              <Button href="/about" variant="secondary">
+                About Us
+              </Button>
+            </div>
+          )}
         </motion.div>
       </div>
     </SectionWrapper>

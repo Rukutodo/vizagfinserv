@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
-import PlaceholderPage from '@/components/PlaceholderPage';
+import PageHero from '@/components/PageHero';
+import BusinessSnapshot from '@/components/sections/BusinessSnapshot';
+import AboutSreekar from '@/components/sections/AboutSreekar';
+import WhyWorkWithUs from '@/components/sections/WhyWorkWithUs';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -9,10 +12,15 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <PlaceholderPage
-      eyebrow="About Us"
-      title="Our Story"
-      description="Learn about VizagFinServ's journey as an AMFI-registered Mutual Fund Distributor, the family's multi-generational commitment since 1995, and our approach to helping families invest with clarity and discipline."
-    />
+    <>
+      <PageHero
+        eyebrow="About Us"
+        title="Our Story"
+        subtitle="A multi-generational commitment to helping families invest with clarity, discipline and a long-term approach."
+      />
+      <BusinessSnapshot />
+      <AboutSreekar linkToPage={false} />
+      <WhyWorkWithUs />
+    </>
   );
 }

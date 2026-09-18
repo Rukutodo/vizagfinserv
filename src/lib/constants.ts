@@ -204,3 +204,66 @@ export const DISCLAIMERS = {
   notAdvisor: 'VizagFinServ (Sasanapuri Sreekar) is an AMFI-Registered Mutual Fund Distributor (ARN 138117) and not a SEBI-Registered Investment Adviser.',
   investmentRisk: 'Past performance is not indicative of future results. Please read the Scheme Information Document and Key Information Memorandum before investing.',
 } as const;
+
+// Mutual fund glossary — Resources page
+export const GLOSSARY = [
+  {
+    term: 'SIP (Systematic Investment Plan)',
+    definition: 'A method of investing a fixed amount in a mutual fund scheme at regular intervals—typically monthly—rather than as a lump sum.',
+  },
+  {
+    term: 'Lumpsum Investment',
+    definition: 'A one-time investment of a single amount into a mutual fund scheme, as opposed to staggered periodic investments.',
+  },
+  {
+    term: 'NAV (Net Asset Value)',
+    definition: "The per-unit market value of a mutual fund scheme, calculated by dividing the total value of a scheme's assets by its number of outstanding units.",
+  },
+  {
+    term: 'Expense Ratio',
+    definition: 'The annual fee charged by a mutual fund, expressed as a percentage of assets under management, to cover fund management and operating costs.',
+  },
+  {
+    term: 'STP (Systematic Transfer Plan)',
+    definition: 'A facility that allows periodic transfer of a fixed amount from one mutual fund scheme to another, typically from a debt fund into an equity fund.',
+  },
+  {
+    term: 'SWP (Systematic Withdrawal Plan)',
+    definition: 'A facility that allows periodic withdrawal of a fixed amount from a mutual fund investment, often used to generate regular income.',
+  },
+  {
+    term: 'ELSS (Equity Linked Savings Scheme)',
+    definition: 'A category of equity mutual fund that offers tax deduction under Section 80C of the Income Tax Act, with a mandatory 3-year lock-in period.',
+  },
+  {
+    term: 'AUM (Assets Under Management)',
+    definition: 'The total market value of investments that a fund house or scheme manages on behalf of its investors.',
+  },
+  {
+    term: 'Exit Load',
+    definition: 'A fee charged by a mutual fund scheme when units are redeemed before a specified holding period, expressed as a percentage of the redemption value.',
+  },
+  {
+    term: 'KYC (Know Your Customer)',
+    definition: 'A mandatory identity verification process required before investing in mutual funds, as prescribed by SEBI and AMFI.',
+  },
+] as const;
+
+// Official investor-education & grievance-redressal resources
+export const OFFICIAL_RESOURCES = [
+  {
+    title: 'AMFI — Association of Mutual Funds in India',
+    description: 'Investor education material, scheme information and the official distributor (ARN) registry.',
+    href: 'https://www.amfiindia.com',
+  },
+  {
+    title: 'SEBI — Securities and Exchange Board of India',
+    description: "India's capital markets regulator, with investor guides and regulatory circulars.",
+    href: 'https://www.sebi.gov.in',
+  },
+  {
+    title: 'SEBI SCORES — Investor Grievance Portal',
+    description: 'File and track complaints against SEBI-regulated entities, including mutual fund distributors.',
+    href: 'https://scores.sebi.gov.in',
+  },
+] as const;
