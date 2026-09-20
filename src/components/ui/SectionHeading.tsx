@@ -28,7 +28,7 @@ export default function SectionHeading({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className={`mb-10 md:mb-14 ${alignClass} ${maxW} ${className}`}
+      className={`mb-8 md:mb-10 ${alignClass} ${maxW} ${className}`}
     >
       {eyebrow && (
         <span
