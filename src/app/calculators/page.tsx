@@ -106,7 +106,7 @@ export default function CalculatorsPage() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-          className="bg-white/40 backdrop-blur-md rounded-2xl p-3 md:p-4 shadow-sm border border-white/60 max-w-6xl mx-auto mb-10 md:overflow-x-auto"
+          className="bg-white rounded-2xl p-3 md:p-4 shadow-sm border border-white max-w-6xl mx-auto mb-10 md:overflow-x-auto"
         >
           <div className="flex flex-wrap justify-center items-center gap-1.5 md:flex-nowrap md:gap-2 md:min-w-max">
             {tabs.map((tab, i) => {
