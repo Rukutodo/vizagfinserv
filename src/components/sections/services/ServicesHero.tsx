@@ -26,7 +26,7 @@ export default function ServicesHero() {
 
       <div className="container-narrow relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -34,7 +34,7 @@ export default function ServicesHero() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="max-w-2xl"
           >
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -43,15 +43,15 @@ export default function ServicesHero() {
               <Sparkles className="w-3.5 h-3.5" />
               Our Expertise
             </motion.div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 font-heading">
               Comprehensive <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 to-brand-500">
                 Financial
               </span> Solutions
             </h1>
-            
-            <motion.p 
+
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -80,17 +80,17 @@ export default function ServicesHero() {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
             className="relative"
           >
-            {/* Glowing orb behind image */}
+            {/* Glowing orb behind imagess */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-brand-600/30 to-brand-300/20 blur-[80px] rounded-full z-0" />
-            
+
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="relative z-10 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-brand-900/50 backdrop-blur-sm"
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/40 via-transparent to-white/10 pointer-events-none z-10" />
-              <Image 
-                src="/images/services-hero.jpg" 
+              <Image
+                src="/images/services-hero.jpg"
                 alt="Comprehensive Financial Solutions"
                 width={800}
                 height={600}
@@ -100,7 +100,7 @@ export default function ServicesHero() {
             </motion.div>
 
             {/* Floating glassmorphism cards (Optional subtle details) */}
-            <motion.div 
+            <motion.div
               animate={{ y: [10, -10, 10], x: [0, -5, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               className="absolute -bottom-6 -left-6 z-20 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-xl hidden md:block"
