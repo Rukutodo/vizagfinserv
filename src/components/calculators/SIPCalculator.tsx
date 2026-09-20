@@ -142,12 +142,12 @@ export default function SIPCalculator({ defaultTab = "SIP", hideToggle = false }
   return (
     <div className="overflow-hidden max-w-6xl mx-auto flex flex-col lg:flex-row gap-8">
       {/* Left side: Inputs */}
-      <div className="lg:w-7/12 bg-brand-900/90 backdrop-blur-md rounded-2xl p-8 lg:p-10 border border-white/10 shadow-xl space-y-8 flex flex-col justify-between">
+      <div className="lg:w-7/12 bg-white/40 backdrop-blur-md rounded-3xl p-8 lg:p-10 border border-white/60 shadow-sm space-y-8 flex flex-col justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-white mb-2 font-heading">
+          <h2 className="text-2xl font-bold text-neutral-900 mb-2 font-heading">
             {activeTab === "SIP" ? "SIP Calculator" : "Lumpsum Calculator"}
           </h2>
-          <p className="text-brand-200/80 text-sm mb-8">
+          <p className="text-neutral-500 text-sm mb-8">
             {activeTab === "SIP"
               ? "Calculate the future value of your systematic monthly investments."
               : "Estimate returns on one-time lump sum mutual fund investments."}
@@ -157,10 +157,10 @@ export default function SIPCalculator({ defaultTab = "SIP", hideToggle = false }
             {/* Input 1: Investment Amount */}
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <label className="text-brand-100 font-semibold text-sm">
+                <label className="text-neutral-800 font-semibold text-sm">
                   {activeTab === "SIP" ? "Monthly Investment" : "Total Investment"}
                 </label>
-                <span className="bg-white/10 text-brand-300 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-white/10">
+                <span className="bg-brand-50 text-brand-900 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-brand-100">
                   ₹{formatIndian(investment)}
                 </span>
               </div>
@@ -184,7 +184,7 @@ export default function SIPCalculator({ defaultTab = "SIP", hideToggle = false }
                     if (!isNaN(num)) setInvestment(Math.min(num, investMax));
                     else setInvestment(investMin);
                   }}
-                  className="w-28 text-right px-3 py-1.5 text-xs font-semibold text-white bg-white/5 border border-white/10 rounded-lg outline-none focus:border-brand-300"
+                  className="w-28 text-right px-3 py-1.5 text-xs font-medium text-neutral-700 bg-neutral-50 border border-neutral-200 rounded-lg outline-none focus:border-brand-600"
                 />
               </div>
             </div>
@@ -192,10 +192,10 @@ export default function SIPCalculator({ defaultTab = "SIP", hideToggle = false }
             {/* Input 2: Expected Return Rate */}
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <label className="text-brand-100 font-semibold text-sm">
+                <label className="text-neutral-800 font-semibold text-sm">
                   Expected Return Rate (p.a)
                 </label>
-                <span className="bg-white/10 text-brand-300 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-white/10">
+                <span className="bg-brand-50 text-brand-900 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-brand-100">
                   {rate}%
                 </span>
               </div>
@@ -214,7 +214,7 @@ export default function SIPCalculator({ defaultTab = "SIP", hideToggle = false }
                   type="number"
                   value={rate}
                   onChange={(e) => setRate(Number(e.target.value))}
-                  className="sip-num-input w-24 text-right px-3 py-1.5 text-xs font-semibold text-white bg-white/5 border border-white/10 rounded-lg outline-none focus:border-brand-300"
+                  className="sip-num-input w-24 text-right px-3 py-1.5 text-xs font-medium text-neutral-700 bg-neutral-50 border border-neutral-200 rounded-lg outline-none focus:border-brand-600"
                 />
               </div>
             </div>
@@ -222,10 +222,10 @@ export default function SIPCalculator({ defaultTab = "SIP", hideToggle = false }
             {/* Input 3: Time Period */}
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <label className="text-brand-100 font-semibold text-sm">
+                <label className="text-neutral-800 font-semibold text-sm">
                   Time Period
                 </label>
-                <span className="bg-white/10 text-brand-300 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-white/10">
+                <span className="bg-brand-50 text-brand-900 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-brand-100">
                   {years} years
                 </span>
               </div>
@@ -244,7 +244,7 @@ export default function SIPCalculator({ defaultTab = "SIP", hideToggle = false }
                   type="number"
                   value={years}
                   onChange={(e) => setYears(Number(e.target.value))}
-                  className="sip-num-input w-24 text-right px-3 py-1.5 text-xs font-semibold text-white bg-white/5 border border-white/10 rounded-lg outline-none focus:border-brand-300"
+                  className="sip-num-input w-24 text-right px-3 py-1.5 text-xs font-medium text-neutral-700 bg-neutral-50 border border-neutral-200 rounded-lg outline-none focus:border-brand-600"
                 />
               </div>
             </div>
@@ -252,8 +252,8 @@ export default function SIPCalculator({ defaultTab = "SIP", hideToggle = false }
         </div>
       </div>
 
-      {/* Right Side: Dark Navy Panel */}
-      <div className="lg:w-5/12 bg-brand-950 text-white p-8 lg:p-10 flex flex-col justify-between rounded-2xl shadow-xl border border-white/10">
+      {/* Right Side: Brand Navy Panel */}
+      <div className="lg:w-5/12 bg-brand-900 text-white p-8 lg:p-10 flex flex-col justify-between rounded-3xl shadow-lg border border-brand-800">
         <div className="space-y-6">
           <div>
             <span className="text-[11px] font-bold tracking-wider text-brand-300 uppercase">
