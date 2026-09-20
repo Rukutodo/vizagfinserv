@@ -43,7 +43,7 @@ function useCalculatorStyles() {
 export function CalculatorCard({ children }: { children: ReactNode }) {
   useCalculatorStyles();
   return (
-    <div className="bg-white/40 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-white/60 max-w-5xl mx-auto">
+    <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-white max-w-5xl mx-auto">
       <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-10">{children}</div>
     </div>
   );
