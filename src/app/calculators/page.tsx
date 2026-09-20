@@ -84,14 +84,14 @@ export default function CalculatorsPage() {
   const [activeTab, setActiveTab] = useState("sip");
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-brand-50 to-white pt-24 pb-20 text-neutral-900 relative overflow-hidden">
-      <SectionWrapper background="transparent">
+    <main className="min-h-screen bg-brand-100 pt-24 pb-20 text-neutral-900 relative overflow-hidden">
+      <SectionWrapper background="transparent" className="!pt-0">
         {/* Heading — fade in from below */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center max-w-3xl mx-auto mb-10"
+          className="text-center max-w-3xl mx-auto"
         >
           <SectionHeading
             eyebrow="Tools"
