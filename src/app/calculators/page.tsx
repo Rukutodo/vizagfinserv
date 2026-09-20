@@ -84,11 +84,8 @@ export default function CalculatorsPage() {
   const [activeTab, setActiveTab] = useState("sip");
 
   return (
-    <main className="min-h-screen bg-brand-950 pt-24 pb-20 text-white relative overflow-hidden">
-      {/* Decorative gradient orb */}
-      <div className="absolute right-[-10%] top-[-20%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-br from-brand-800 to-transparent blur-3xl opacity-30 mix-blend-screen pointer-events-none" />
-
-      <SectionWrapper>
+    <main className="min-h-screen bg-gradient-to-b from-brand-50 to-white pt-24 pb-20 text-neutral-900 relative overflow-hidden">
+      <SectionWrapper background="transparent">
         {/* Heading — fade in from below */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -101,18 +98,17 @@ export default function CalculatorsPage() {
             title="Financial Calculators"
             subtitle="Use our comprehensive suite of calculators to plan your financial goals and estimate returns."
             align="center"
-            light={true}
           />
         </motion.div>
 
-        {/* Tab bar — dark theme */}
+        {/* Tab bar — light #f6f8fc theme */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-          className="bg-brand-900/80 backdrop-blur-md rounded-2xl p-3 md:p-4 shadow-xl border border-white/10 max-w-6xl mx-auto mb-10 overflow-x-auto"
+          className="bg-white/40 backdrop-blur-md rounded-2xl p-3 md:p-4 shadow-sm border border-white/60 max-w-6xl mx-auto mb-10 md:overflow-x-auto"
         >
-          <div className="flex items-center gap-1.5 md:gap-2 min-w-max">
+          <div className="flex flex-wrap justify-center items-center gap-1.5 md:flex-nowrap md:gap-2 md:min-w-max">
             {tabs.map((tab, i) => {
               const isActive = activeTab === tab.id;
               return (
@@ -124,10 +120,10 @@ export default function CalculatorsPage() {
                   whileHover={{ y: -1 }}
                   whileTap={{ scale: 0.97 }}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                  className={`flex items-center justify-center gap-2 px-3.5 md:px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? "bg-brand-300 text-brand-950 shadow-lg shadow-brand-300/20 font-bold"
-                      : "text-brand-200/80 bg-white/5 hover:bg-white/10 hover:text-white border border-white/10"
+                      ? "bg-brand-900 text-white shadow-md ring-2 ring-brand-900"
+                      : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
                   }`}
                 >
                   <span className="text-sm">{tab.icon}</span>

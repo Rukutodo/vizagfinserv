@@ -7,7 +7,7 @@ interface SectionWrapperProps {
   children: ReactNode;
   className?: string;
   id?: string;
-  background?: 'white' | 'light' | 'brand' | 'dark';
+  background?: 'white' | 'light' | 'brand' | 'dark' | 'transparent';
 }
 
 const bgClasses: Record<string, string> = {
@@ -15,6 +15,7 @@ const bgClasses: Record<string, string> = {
   light: 'bg-neutral-50',
   brand: 'bg-brand-50',
   dark: 'bg-brand-950 text-white',
+  transparent: 'bg-transparent',
 };
 
 export default function SectionWrapper({

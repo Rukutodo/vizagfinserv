@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
-import PlaceholderPage from '@/components/PlaceholderPage';
+import PageHero from '@/components/PageHero';
+import ResourcesGlossary from '@/components/sections/resources/ResourcesGlossary';
+import FAQ from '@/components/sections/FAQ';
+import OfficialResources from '@/components/sections/resources/OfficialResources';
+import ResourcesCTA from '@/components/sections/resources/ResourcesCTA';
 
 export const metadata: Metadata = {
   title: 'Resources',
@@ -9,10 +13,16 @@ export const metadata: Metadata = {
 
 export default function ResourcesPage() {
   return (
-    <PlaceholderPage
-      eyebrow="Learn"
-      title="Resources"
-      description="Educational articles, investor guides and financial literacy resources to help you understand mutual fund investing, goal planning and disciplined wealth building."
-    />
+    <>
+      <PageHero
+        eyebrow="Learn"
+        title="Resources"
+        subtitle="Educational articles, investor guides and financial literacy resources to help you understand mutual fund investing, goal planning and disciplined wealth building."
+      />
+      <ResourcesGlossary />
+      <FAQ />
+      <OfficialResources />
+      <ResourcesCTA />
+    </>
   );
 }

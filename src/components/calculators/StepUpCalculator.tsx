@@ -74,7 +74,7 @@ export default function StepUpCalculator() {
   const investedDashoffset = circumference * (1 - investedPct);
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-brand-100 max-w-5xl mx-auto">
+    <div className="bg-white/40 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-white/60 max-w-5xl mx-auto">
       <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-7 space-y-8">
           <div className="space-y-3">
