@@ -52,23 +52,37 @@ export default function ServicesSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="mb-16 p-6 md:p-8 bg-white rounded-2xl border border-neutral-200 shadow-sm relative overflow-hidden group hover:border-brand-200 transition-colors duration-300"
+        className="mb-16 p-5 sm:p-6 md:p-8 bg-neutral-50/70 border border-neutral-200/80 rounded-2xl relative overflow-hidden backdrop-blur-sm"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-50 rounded-full blur-3xl -z-10 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-        <h4 className="text-sm font-bold uppercase tracking-widest text-brand-900 mb-5 flex items-center gap-2">
-          <span className="w-8 h-px bg-brand-900/20"></span>
-          Supporting Services
-        </h4>
-        <ul className="flex flex-wrap gap-2 md:gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 md:mb-6">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-brand-600"></span>
+            <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-brand-900">
+              Operational & Execution Support
+            </h4>
+          </div>
+          <span className="text-xs text-neutral-500 hidden sm:inline-block">
+            Seamless back-office assistance
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
           {SUPPORTING_SERVICES.map((service) => (
-            <li
+            <div
               key={service}
-              className="text-sm font-medium text-white bg-brand-900 px-4 py-2 md:px-5 md:py-2.5 rounded-full border border-brand-900 shadow-md transition-transform duration-300 hover:-translate-y-0.5 cursor-default"
+              className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-white border border-neutral-200/90 shadow-xs hover:border-brand-300 hover:shadow-sm transition-all duration-200"
             >
-              {service}
-            </li>
+              <div className="w-8 h-8 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center shrink-0">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span className="text-xs sm:text-sm font-medium text-neutral-800 leading-snug">
+                {service}
+              </span>
+            </div>
           ))}
-        </ul>
+        </div>
       </motion.div>
 
       {/* Additional Services */}
