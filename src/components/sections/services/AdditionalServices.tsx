@@ -32,7 +32,7 @@ export default function AdditionalServices() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-white p-8 rounded-3xl shadow-xl shadow-brand-900/5 relative overflow-hidden group"
             >
-              {/* Decorative corner accents */}
+              {/* Decorative corner accent */}
               <div className="absolute -top-12 -right-12 w-32 h-32 bg-brand-50 rounded-full group-hover:scale-150 transition-transform duration-700 ease-out" />
               
               <div className="relative z-10">
