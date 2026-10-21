@@ -15,10 +15,10 @@ export default function WhatsAppFloat() {
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: [1, 1.06, 1], opacity: 1 }}
+      animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.15, rotate: 4 }}
       whileTap={{ scale: 0.95 }}
-      transition={{ delay: 1.2, scale: { repeat: Infinity, duration: 3, ease: 'easeInOut' }, opacity: { duration: 0.4 } }}
+      transition={{ duration: 0.5, type: 'spring', stiffness: 260, damping: 20 }}
       className="fixed bottom-10 sm:bottom-12 right-4 sm:right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/40 transition-all duration-300 cursor-pointer"
     >
       {/* WhatsApp SVG Icon */}
