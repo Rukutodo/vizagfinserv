@@ -26,6 +26,7 @@ export default function AboutSreekar({ linkToPage = true }: { linkToPage?: boole
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 280px, 320px"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-900/30 via-transparent to-transparent" />
 

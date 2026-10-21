@@ -94,6 +94,7 @@ export default function ServicesHero() {
                 alt="Comprehensive Financial Solutions"
                 width={800}
                 height={600}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
                 priority
               />

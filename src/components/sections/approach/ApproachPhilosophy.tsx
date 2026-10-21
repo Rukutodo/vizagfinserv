@@ -79,6 +79,7 @@ export default function ApproachPhilosophy() {
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent" />
           </div>

@@ -186,6 +186,7 @@ export default function Footer() {
                     alt="StackX Logo" 
                     width={76} 
                     height={30} 
+                    loading="lazy" 
                     className="brightness-0 invert drop-shadow-[0_2px_4px_rgba(255,255,255,0.1)]" 
                   />
                 </a>
