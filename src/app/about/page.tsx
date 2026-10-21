@@ -3,24 +3,30 @@ import PageHero from '@/components/PageHero';
 import BusinessSnapshot from '@/components/sections/BusinessSnapshot';
 import AboutSreekar from '@/components/sections/AboutSreekar';
 import WhyWorkWithUs from '@/components/sections/WhyWorkWithUs';
+import AboutProcess from '@/components/sections/about/AboutProcess';
+import AboutScopeBento from '@/components/sections/about/AboutScopeBento';
+import AboutContactCTA from '@/components/sections/about/AboutContactCTA';
 
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Learn about VizagFinServ (Sasanapuri Sreekar), an AMFI-Registered Mutual Fund Distributor since 2017, based in Visakhapatnam, Andhra Pradesh. A multi-generational commitment to helping families invest.',
+    'We don’t just invest your money. We invest in your plans. Learn about VizagFinServ (Sasanapuri Sreekar), an AMFI-Registered Mutual Fund Distributor based in Visakhapatnam, Andhra Pradesh.',
 };
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Us"
-        title="Our Story"
-        subtitle="A multi-generational commitment to helping families invest with clarity, discipline and a long-term approach."
+        eyebrow="About VizagFinServ"
+        title="We don't just invest your money. We invest in your plans."
+        subtitle="Every family we meet is working toward something specific — a child's education, a first home, a retirement that feels secure. We start with that goal, then build a disciplined, long-term investing approach around it."
       />
       <BusinessSnapshot />
       <AboutSreekar linkToPage={false} />
       <WhyWorkWithUs />
+      <AboutProcess />
+      <AboutScopeBento />
+      <AboutContactCTA />
     </>
   );
 }
