@@ -19,7 +19,7 @@ export default function WhatsAppFloat() {
       whileHover={{ scale: 1.15, rotate: 4 }}
       whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.5, type: 'spring', stiffness: 260, damping: 20 }}
-      className="fixed bottom-10 sm:bottom-12 right-4 sm:right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/40 transition-all duration-300 cursor-pointer"
+      className="fixed bottom-[calc(3.25rem+env(safe-area-inset-bottom,0px))] sm:bottom-14 right-4 sm:right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/40 transition-all duration-300 cursor-pointer"
     >
       {/* WhatsApp SVG Icon */}
       <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">

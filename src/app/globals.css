@@ -44,6 +44,11 @@
   --foreground: #1A1A2E;
 }
 
+/* iOS & macOS WebKit rendering and touch optimizations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -56,6 +61,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.7;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Typography */

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -69,6 +69,18 @@ export const metadata: Metadata = {
     follow: true,
   },
   metadataBase: new URL("https://vizagfinserv.com"),
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "VizagFinServ",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0F2A4A",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

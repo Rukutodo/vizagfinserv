@@ -19,7 +19,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center pt-24 pb-36 overflow-hidden bg-brand-950 text-white">
+    <section className="relative w-full min-h-[90vh] min-h-[90dvh] flex items-center pt-24 pb-36 overflow-hidden bg-brand-950 text-white">
       {/* Background architectural image */}
       <div className="absolute inset-0 w-full h-full opacity-20 pointer-events-none mix-blend-overlay">
         <Image
