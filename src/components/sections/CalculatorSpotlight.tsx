@@ -120,6 +120,7 @@ export default function CalculatorSpotlight() {
                   whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                   viewport={{ once: true }}
                   whileHover={{ y: -6, scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
                   transition={{ duration: 0.45, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link

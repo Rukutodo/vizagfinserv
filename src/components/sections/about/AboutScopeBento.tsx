@@ -37,6 +37,7 @@ export default function AboutScopeBento() {
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true }}
           whileHover={{ y: -8, scale: 1.015 }}
+          whileTap={{ scale: 0.985 }}
           transition={{ duration: 0.55, delay: 0, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-7 bg-brand-900 text-white rounded-3xl p-8 md:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden group"
         >
@@ -88,6 +89,7 @@ export default function AboutScopeBento() {
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true }}
           whileHover={{ y: -8, scale: 1.015 }}
+          whileTap={{ scale: 0.985 }}
           transition={{ duration: 0.55, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-5 bg-white border border-neutral-200/80 rounded-3xl p-8 md:p-10 flex flex-col justify-between shadow-sm relative overflow-hidden"
         >
@@ -137,6 +139,7 @@ export default function AboutScopeBento() {
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true }}
           whileHover={{ y: -8, scale: 1.015 }}
+          whileTap={{ scale: 0.985 }}
           transition={{ duration: 0.55, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-6 bg-white border border-neutral-200/80 rounded-3xl p-8 shadow-sm flex flex-col justify-between"
         >
@@ -169,6 +172,7 @@ export default function AboutScopeBento() {
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true }}
           whileHover={{ y: -8, scale: 1.015 }}
+          whileTap={{ scale: 0.985 }}
           transition={{ duration: 0.55, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-6 bg-white border border-neutral-200/80 rounded-3xl p-8 shadow-sm flex flex-col justify-between"
         >

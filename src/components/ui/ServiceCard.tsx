@@ -48,6 +48,7 @@ export default function ServiceCard({
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true }}
       whileHover={{ y: -8, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.5, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
       className={`group relative p-5 md:p-6 rounded-2xl border transition-transform duration-300 ${
         variant === 'primary'

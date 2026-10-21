@@ -25,6 +25,7 @@ export default function PrincipleCard({
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true }}
       whileHover={{ y: -8, scale: 1.025 }}
+      whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.55, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       className={`group relative p-5 md:p-7 rounded-xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
         isDark 

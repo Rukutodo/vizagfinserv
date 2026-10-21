@@ -73,6 +73,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             whileHover={{ y: -8, scale: 1.025 }}
+            whileTap={{ scale: 0.98 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="group relative p-6 md:p-8 rounded-2xl bg-white shadow-xl shadow-black/20 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-900/40 transition-all duration-300"
