@@ -19,10 +19,11 @@ export default function SupportingServices() {
         {SUPPORTING_SERVICES.map((service, i) => (
           <motion.div
             key={service}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            whileHover={{ y: -8, scale: 1.03 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
+            transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="bg-white p-6 md:p-8 rounded-2xl border border-neutral-200 shadow-sm hover:shadow-md hover:border-brand-200 transition-all duration-300 group"
           >
             <div className="w-12 h-12 rounded-full bg-brand-50 text-brand-900 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-900 group-hover:text-white transition-all duration-300">

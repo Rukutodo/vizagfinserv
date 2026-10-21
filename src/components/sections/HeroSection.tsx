@@ -33,7 +33,15 @@ export default function HeroSection() {
       </div>
 
       {/* Decorative gradient orb */}
-      <div className="absolute right-[-10%] top-[-20%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-br from-brand-800 to-transparent blur-3xl opacity-50 mix-blend-screen" />
+      <motion.div
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [0.4, 0.65, 0.4],
+          x: [0, 20, 0],
+        }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute right-[-10%] top-[-20%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-br from-brand-700 via-brand-800 to-transparent blur-3xl opacity-50 mix-blend-screen pointer-events-none"
+      />
 
       {/* Content */}
       <div className="w-full max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10">
@@ -58,19 +66,27 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Headline */}
-          <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-tight leading-[1.08] max-w-[800px] font-heading text-white">
+          <motion.h1
+            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.85, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold tracking-tight leading-[1.08] max-w-[800px] font-heading text-white">
             Invest with{' '}
             <span className="text-brand-300 italic">clarity.</span>
             <br />
             Stay disciplined.
             <br />
             Think long term.
-          </h1>
+          </motion.h1>
 
           {/* Supporting copy with left border */}
-          <p className="text-base md:text-lg text-brand-200/80 max-w-[600px] leading-relaxed border-l-4 border-brand-300 pl-4 md:pl-5">
+          <motion.p
+            initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.85, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="text-base md:text-lg text-brand-200/80 max-w-[600px] leading-relaxed border-l-4 border-brand-300 pl-4 md:pl-5">
             Partnering with families to build resilient mutual fund portfolios. We focus on process-driven distribution grounded in enduring financial principles, not market noise.
-          </p>
+          </motion.p>
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-4 mt-2">
@@ -96,13 +112,18 @@ export default function HeroSection() {
 
         {/* Right: Decorative Chart Card (4 cols) */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+          initial={{ opacity: 0, x: 40, filter: 'blur(10px)' }}
+          animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
           className="col-span-1 lg:col-span-4 hidden lg:flex items-end justify-end relative"
         >
           <motion.div 
-            whileHover={{ y: -8, scale: 1.02 }}
+            animate={{ y: [-7, 7, -7] }}
+            transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-full"
+          >
+            <motion.div 
+              whileHover={{ y: -8, scale: 1.025 }}
             transition={{ duration: 0.3 }}
             className="relative w-full aspect-[3/4] bg-brand-800 rounded-2xl overflow-hidden shadow-2xl p-6 flex flex-col justify-between border border-white/10 backdrop-blur-md group cursor-pointer"
           >
@@ -227,6 +248,7 @@ export default function HeroSection() {
                 ))}
               </div>
             </div>
+          </motion.div>
           </motion.div>
         </motion.div>
       </div>

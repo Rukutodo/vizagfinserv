@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 import RegulatoryStrip from "@/components/ui/RegulatoryStrip";
+import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import "./globals.css";
 
 const inter = Inter({
@@ -78,6 +79,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <meta name="theme-color" content="#0F2A4A" />
       </head>
       <body className="min-h-full flex flex-col antialiased" suppressHydrationWarning>
+        <ScrollProgressBar />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

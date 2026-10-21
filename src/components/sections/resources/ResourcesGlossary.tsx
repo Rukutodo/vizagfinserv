@@ -11,17 +11,18 @@ export default function ResourcesGlossary() {
       <SectionHeading
         eyebrow="Glossary"
         title="Mutual fund terms, explained"
-        subtitle="Common terms you'll come across while investing—explained simply."
+        subtitle="Common terms you'll come across while investing, explained simply."
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
         {GLOSSARY.map((item, i) => (
           <motion.div
             key={item.term}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 25, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            whileHover={{ y: -6, scale: 1.02 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.05 }}
+            transition={{ duration: 0.5, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
             className="p-5 md:p-6 rounded-xl bg-neutral-50 border border-neutral-100 hover:border-brand-200 transition-colors duration-300"
           >
             <p className="text-sm md:text-base font-semibold text-brand-900 mb-2">{item.term}</p>

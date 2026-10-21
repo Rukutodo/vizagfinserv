@@ -68,9 +68,11 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
           {SUPPORTING_SERVICES.map((service) => (
-            <div
+            <motion.div
               key={service}
-              className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-white border border-neutral-200/90 shadow-xs hover:border-brand-300 hover:shadow-sm transition-all duration-200"
+              whileHover={{ y: -4, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              className="flex items-center gap-3 p-3.5 sm:p-4 rounded-xl bg-white border border-neutral-200/90 shadow-xs hover:border-brand-300 hover:shadow-md transition-colors duration-200 cursor-default"
             >
               <div className="w-8 h-8 rounded-lg bg-brand-50 text-brand-700 flex items-center justify-center shrink-0">
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -80,7 +82,7 @@ export default function ServicesSection() {
               <span className="text-xs sm:text-sm font-medium text-neutral-800 leading-snug">
                 {service}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>

@@ -9,7 +9,7 @@ const FAQS = [
   {
     question: 'What is a Mutual Fund Distributor (MFD)?',
     answer:
-      'A Mutual Fund Distributor is an AMFI-registered professional who helps investors choose and invest in mutual fund schemes. We guide you through the process—from understanding your goals to selecting the right funds—and provide ongoing support throughout your investment journey.',
+      'A Mutual Fund Distributor is an AMFI-registered professional who helps investors choose and invest in mutual fund schemes. We guide you through the process, from understanding your goals to selecting the right funds, and provide ongoing support throughout your investment journey.',
   },
   {
     question: 'How do I start investing with VizagFinServ?',
@@ -58,10 +58,10 @@ function FAQItem({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.06 }}
+      transition={{ duration: 0.5, delay: index * 0.06, ease: [0.16, 1, 0.3, 1] }}
       className={`rounded-2xl border overflow-hidden transition-all duration-300 ${
         isOpen
           ? 'bg-white shadow-xl shadow-brand-900/10 border-brand-200'

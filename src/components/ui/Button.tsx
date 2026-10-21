@@ -51,7 +51,7 @@ export default function Button({
 }: ButtonProps) {
   const hasCustomDisplay = /\b(inline-flex|flex|hidden|inline-block|block|grid)\b/.test(className);
   const baseStyles =
-    `${hasCustomDisplay ? '' : 'inline-flex '}items-center justify-center font-medium rounded-lg transition-all duration-200 ease-out focus-visible:outline-2 focus-visible:outline-brand-500 focus-visible:outline-offset-2 cursor-pointer whitespace-nowrap`;
+    `${hasCustomDisplay ? '' : 'inline-flex '}items-center justify-center font-medium rounded-lg transition-all duration-200 ease-out focus-visible:outline-2 focus-visible:outline-brand-500 focus-visible:outline-offset-2 cursor-pointer whitespace-nowrap hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]`;
 
   const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`.trim();
 

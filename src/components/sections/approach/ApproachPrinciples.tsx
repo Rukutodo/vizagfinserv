@@ -15,7 +15,7 @@ export default function ApproachPrinciples() {
       <SectionHeading
         eyebrow="Our Principles"
         title="What guides our approach"
-        subtitle="Four principles that shape how we think about investing—rooted in discipline, patience and transparency."
+        subtitle="Four principles that shape how we think about investing, rooted in discipline, patience and transparency."
         light={true}
       />
 
@@ -23,10 +23,11 @@ export default function ApproachPrinciples() {
         {PRINCIPLES.map((principle, i) => (
           <motion.div
             key={principle.number}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            whileHover={{ y: -8, scale: 1.025 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.12 }}
+            transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="group p-6 md:p-8 rounded-2xl bg-white shadow-xl shadow-black/20 hover:-translate-y-1 transition-all duration-300"
           >
             {/* Number badge */}

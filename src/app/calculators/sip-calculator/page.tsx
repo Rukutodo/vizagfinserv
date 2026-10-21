@@ -55,7 +55,7 @@ export default function SIPCalculatorPage() {
                 made through SIP. It provides a projection of the future value
                 of your investments based on the expected rate of return and the
                 investment duration. SIPs allow you to invest a fixed amount
-                regularly — weekly, monthly, or quarterly — into a mutual fund
+                regularly, whether weekly, monthly, or quarterly, into a mutual fund
                 scheme of your choice.
               </p>
             </section>
@@ -74,18 +74,18 @@ export default function SIPCalculatorPage() {
               </div>
               <ul className="list-disc pl-6 mt-5 space-y-2">
                 <li>
-                  <strong>M</strong> — Maturity amount (total value at the end)
+                  <strong>M</strong>: Maturity amount (total value at the end)
                 </li>
                 <li>
-                  <strong>P</strong> — Amount invested at regular intervals
+                  <strong>P</strong>: Amount invested at regular intervals
                   (e.g. monthly)
                 </li>
                 <li>
-                  <strong>n</strong> — Total number of payments (years × 12 for
+                  <strong>n</strong>: Total number of payments (years × 12 for
                   monthly SIP)
                 </li>
                 <li>
-                  <strong>i</strong> — Effective monthly rate, calculated as{" "}
+                  <strong>i</strong>: Effective monthly rate, calculated as{" "}
                   <code className="bg-brand-50 px-1.5 py-0.5 rounded text-xs">
                     (1 + annual_rate)<sup>1/12</sup> − 1
                   </code>
@@ -141,7 +141,7 @@ export default function SIPCalculatorPage() {
                 SIP is generally preferred for salaried individuals looking to
                 build wealth systematically while managing volatility. Lumpsum
                 investing can be advantageous when you have surplus funds and a
-                longer time horizon. Both approaches have their merits — and in
+                longer time horizon. Both approaches have their merits, and in
                 practice, many investors use a combination of both.
               </p>
             </section>

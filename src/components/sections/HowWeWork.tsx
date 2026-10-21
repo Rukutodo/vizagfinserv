@@ -27,14 +27,15 @@ export default function HowWeWork() {
           {PROCESS_STEPS.map((step, i) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -30, filter: 'blur(6px)' }}
+              whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+              whileHover={{ x: 8 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="relative flex gap-6 md:gap-8 mb-10 last:mb-0"
+              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative flex gap-6 md:gap-8 mb-10 last:mb-0 cursor-default"
             >
               {/* Number circle */}
-              <div className="relative z-10 shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-brand-900 text-white flex items-center justify-center font-bold text-lg md:text-xl shadow-lg shadow-brand-900/20">
+              <div className="relative z-10 shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-brand-900 text-white flex items-center justify-center font-bold text-lg md:text-xl shadow-lg shadow-brand-900/20 group-hover:scale-110 group-hover:bg-brand-800 transition-all duration-300">
                 {step.number}
               </div>
 

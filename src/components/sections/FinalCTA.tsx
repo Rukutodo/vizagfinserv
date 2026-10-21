@@ -16,10 +16,10 @@ export default function FinalCTA({ linkToPage = true }: { linkToPage?: boolean }
 
       <div className="container-narrow relative z-10 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-heading leading-tight mb-5">
             Let&apos;s Start Your{' '}

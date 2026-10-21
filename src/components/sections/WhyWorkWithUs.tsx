@@ -32,7 +32,7 @@ export default function WhyWorkWithUs() {
       <SectionHeading
         eyebrow="Why Work With Us"
         title="Built for trust, not transactions"
-        subtitle="What makes our approach different—focused on relationships, transparency and your long-term financial well-being."
+        subtitle="Our approach focuses on lasting relationships, transparency, and your family's long-term financial well-being."
         light={true}
       />
 
@@ -42,10 +42,12 @@ export default function WhyWorkWithUs() {
           return (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -8, scale: 1.025 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="group p-5 md:p-7 rounded-2xl bg-white shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-brand-900/40 transition-all duration-300 hover:-translate-y-1 border border-white/10"
             >
               <div className="w-11 h-11 rounded-lg bg-brand-50 text-brand-900 flex items-center justify-center mb-4 group-hover:bg-brand-900 group-hover:text-white transition-all duration-300 shadow-sm group-hover:scale-110">

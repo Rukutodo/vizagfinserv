@@ -15,10 +15,11 @@ interface AnimatedStatProps {
 function AnimatedStat({ value, label, icon, index, isLast = false }: AnimatedStatProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
+      whileHover={{ scale: 1.04 }}
+      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       className={`p-5 md:p-8 flex flex-col items-center justify-center text-center group ${
         isLast ? 'bg-brand-900/5' : ''
       }`}
@@ -43,10 +44,10 @@ export default function BusinessSnapshot() {
   return (
     <section className="relative z-20 -mt-14 mx-auto max-w-[1100px] px-4 md:px-0 mb-8">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 35, filter: 'blur(6px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
         className="bg-white rounded-xl shadow-xl overflow-hidden border border-neutral-100"
       >
         <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-neutral-200/60">

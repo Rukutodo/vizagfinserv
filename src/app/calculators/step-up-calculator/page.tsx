@@ -57,7 +57,7 @@ export default function StepUpCalculatorPage() {
                 As your income increases over your career, your savings rate should ideally increase as well. Maintaining a flat SIP amount for 15–20 years doesn't leverage your growing financial strength.
               </p>
               <p className="mt-3">
-                For example, a fixed SIP of ₹10,000 monthly for 20 years at a 12% return yields approximately **₹1 Crore**. However, if you simply increase (step-up) your SIP by **10% every year**, your accumulated corpus grows to over **₹2 Crore** — double the value, with manageable incremental steps.
+                For example, a fixed SIP of ₹10,000 monthly for 20 years at a 12% return yields approximately **₹1 Crore**. However, if you simply increase (step-up) your SIP by **10% every year**, your accumulated corpus grows to over **₹2 Crore**, doubling the value through manageable incremental steps.
               </p>
             </section>
 

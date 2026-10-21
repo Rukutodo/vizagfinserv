@@ -116,10 +116,12 @@ export default function CalculatorSpotlight() {
               {CALCULATORS.map((calc, i) => (
                 <motion.div
                   key={calc.name}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 25, filter: 'blur(4px)' }}
+                  whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                  whileHover={{ y: -6, scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
+                  transition={{ duration: 0.45, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Link
                     href={calc.href}

@@ -74,7 +74,7 @@ export const PRINCIPLES = [
   {
     number: '01',
     title: 'Goals Before Products',
-    description: 'Every investment conversation begins with understanding what the money is for—retirement, education, a home, or financial independence. The goal shapes the approach, not the other way around.',
+    description: 'Every investment conversation begins with understanding what the money is for, such as retirement, education, a home, or financial independence. The goal shapes the approach, not the other way around.',
   },
   {
     number: '02',
@@ -84,7 +84,7 @@ export const PRINCIPLES = [
   {
     number: '03',
     title: 'Compounding Needs Patience',
-    description: 'Long-term compounding is one of the most powerful concepts in investing, but it requires patience. Staying invested through volatility is often the hardest—and most important—part.',
+    description: 'Long-term compounding is one of the most powerful concepts in investing, but it requires patience. Staying invested through volatility is often the hardest, and most important, part.',
   },
   {
     number: '04',
@@ -97,7 +97,7 @@ export const PRINCIPLES = [
 export const PRIMARY_SERVICES = [
   {
     title: 'Goal-Based SIP & Investment Planning',
-    description: 'Systematic investment plans designed around your specific life goals—retirement, education, home purchase and more.',
+    description: 'Systematic investment plans designed around your specific life goals, including retirement, education, home purchase, and more.',
     icon: 'target',
   },
   {
@@ -142,7 +142,7 @@ export const ADDITIONAL_SERVICES = [
   },
   {
     title: 'Tax & Estate Planning',
-    description: 'Coordination through independent CA and legal-professional referral partnerships.',
+    description: 'Coordination through independent CA and legal professional referral partnerships.',
     note: 'Through referral partners',
     icon: 'document',
   },
@@ -152,7 +152,7 @@ export const ADDITIONAL_SERVICES = [
 export const DIFFERENTIATORS = [
   {
     title: 'Personalized Goal-Based Approach',
-    description: 'Every investment conversation starts with your unique goals—not a one-size-fits-all product recommendation.',
+    description: 'Every investment conversation starts with your personal goals, not a generic product recommendation.',
     icon: 'user',
   },
   {
@@ -167,7 +167,7 @@ export const DIFFERENTIATORS = [
   },
   {
     title: 'Long-Term Relationship Mindset',
-    description: 'Built for relationships that last years and decades—not quick sales or short-term transactions.',
+    description: 'Built for relationships that last for years and decades, rather than quick sales or one-off transactions.',
     icon: 'handshake',
   },
   {
@@ -177,7 +177,7 @@ export const DIFFERENTIATORS = [
   },
   {
     title: 'Focused & Responsible Scope',
-    description: 'Goal-based mutual fund investing and insurance—without direct equity trading, F&O or speculative products.',
+    description: 'Disciplined mutual fund distribution and insurance planning, without direct equity trading, F&O, or speculative products.',
     icon: 'focus',
   },
 ] as const;
@@ -197,7 +197,7 @@ export const PROCESS_STEPS = [
   {
     number: '03',
     title: 'Invest',
-    description: 'We support the investment process—whether through SIPs, lumpsum investments, STPs or other relevant routes.',
+    description: 'We support the investment process, whether through SIPs, lumpsum investments, STPs, or other relevant routes.',
   },
   {
     number: '04',
@@ -219,7 +219,7 @@ export const DISCLAIMERS = {
 export const GLOSSARY = [
   {
     term: 'SIP (Systematic Investment Plan)',
-    definition: 'A method of investing a fixed amount in a mutual fund scheme at regular intervals—typically monthly—rather than as a lump sum.',
+    definition: 'A method of investing a fixed amount in a mutual fund scheme at regular intervals, typically monthly, rather than as a lump sum.',
   },
   {
     term: 'Lumpsum Investment',

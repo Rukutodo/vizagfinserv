@@ -33,10 +33,11 @@ export default function AdditionalServices() {
           return (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30, scale: 0.95, filter: 'blur(6px)' }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+              whileHover={{ y: -8, scale: 1.025 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
               className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl relative overflow-hidden group hover:bg-white/10 transition-colors duration-300"
             >
               {/* Decorative corner accent */}

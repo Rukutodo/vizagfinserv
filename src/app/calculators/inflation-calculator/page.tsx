@@ -54,7 +54,7 @@ export default function InflationCalculatorPage() {
                 Nominal Value vs. Real Value
               </h3>
               <p>
-                When planning for long-term goals like retirement or children's education, looking only at nominal values (the face value of money) can be misleading. You must calculate the **real value** — which is adjusted for inflation. 
+                When planning for long-term goals like retirement or children's education, looking only at nominal values (the face value of money) can be misleading. You must calculate the **real value**, which is adjusted for inflation. 
               </p>
               <p className="mt-3">
                 For example, if you save ₹1 Crore for retirement 25 years from now, it will only have the purchasing power of about ₹23 Lakhs today (assuming a 6% inflation rate). This highlights why simply keeping cash in low-yielding bank accounts actually decreases your real wealth over time.

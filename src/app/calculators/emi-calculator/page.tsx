@@ -61,13 +61,13 @@ export default function EMICalculatorPage() {
               </div>
               <ul className="list-disc pl-6 mt-5 space-y-2">
                 <li>
-                  <strong>P</strong> — Principal loan amount borrowed
+                  <strong>P</strong>: Principal loan amount borrowed
                 </li>
                 <li>
-                  <strong>r</strong> — Monthly interest rate, calculated as (Annual Interest Rate / 12) / 100
+                  <strong>r</strong>: Monthly interest rate, calculated as (Annual Interest Rate / 12) / 100
                 </li>
                 <li>
-                  <strong>n</strong> — Loan tenure in number of months (Tenure in Years × 12)
+                  <strong>n</strong>: Loan tenure in number of months (Tenure in Years × 12)
                 </li>
               </ul>
             </section>
