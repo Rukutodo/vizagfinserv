@@ -60,7 +60,7 @@ export default function AboutSreekar({ linkToPage = true }: { linkToPage?: boole
               Sasanapuri Sreekar has been an AMFI-registered Mutual Fund Distributor since {CONTACT.since}, based in {CONTACT.location}. His approach centres on understanding each family&apos;s unique goals and circumstances before considering investment options.
             </p>
             <p>
-              The foundation of trust runs deeper than a single generation. Sreekar&apos;s mother has been an AMFI-registered MFD since 1995—nearly three decades of helping families navigate their investment journeys.
+              The foundation of trust runs deeper than a single generation. Sreekar&apos;s mother has been an AMFI-registered distributor since 1995, bringing three decades of experience in guiding family investments.
             </p>
             <p>
               This multi-generational experience in mutual fund distribution shapes a practice built on long-term relationships, disciplined investing and genuine care for each client&apos;s financial well-being.

@@ -6,10 +6,10 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import { ShieldIcon, HandshakeIcon } from '@/components/ui/Icons';
 
 const mutualFundOfferings = [
-  'Goal-based SIP and investment support',
+  'Goal based SIP and investment support',
   'Fund selection and distribution across AMCs',
-  'Lumpsum and one-time investments',
-  'STP and SWP set-up',
+  'Lumpsum investments',
+  'STP and SWP setup',
   'Portfolio review and rebalancing',
   'Specialized Investment Funds (SIF), as a distributor since October 2026',
 ];
@@ -100,7 +100,7 @@ export default function AboutScopeBento() {
               Other Financial Products
             </h3>
             <p className="text-sm text-neutral-600 mb-5 leading-relaxed">
-              We also help clients with government-backed and conservative fixed-income instruments:
+              We also help clients with government backed and conservative fixed income instruments:
             </p>
 
             <ul className="space-y-2.5 mb-6">
@@ -150,7 +150,7 @@ export default function AboutScopeBento() {
               No Stock Trading or F&amp;O
             </h3>
             <p className="text-sm text-neutral-600 leading-relaxed">
-              We do not offer stock trading, Futures &amp; Options (F&amp;O), intraday tips, or speculative products. Our focus is strictly on long-term, goal-oriented wealth accumulation rather than short-term market speculation.
+              We do not offer stock trading, Futures &amp; Options (F&amp;O), intraday tips, or speculative products. Our focus is strictly on long-term wealth accumulation rather than short-term market speculation.
             </p>
           </div>
 

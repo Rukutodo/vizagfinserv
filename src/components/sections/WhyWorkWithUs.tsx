@@ -32,7 +32,7 @@ export default function WhyWorkWithUs() {
       <SectionHeading
         eyebrow="Why Work With Us"
         title="Built for trust, not transactions"
-        subtitle="What makes our approach different—focused on relationships, transparency and your long-term financial well-being."
+        subtitle="Our approach focuses on lasting relationships, transparency, and your family's long-term financial well-being."
         light={true}
       />
 

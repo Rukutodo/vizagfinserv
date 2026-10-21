@@ -152,7 +152,7 @@ export const ADDITIONAL_SERVICES = [
 export const DIFFERENTIATORS = [
   {
     title: 'Personalized Goal-Based Approach',
-    description: 'Every investment conversation starts with your unique goals—not a one-size-fits-all product recommendation.',
+    description: 'Every investment conversation starts with your personal goals, not a generic product recommendation.',
     icon: 'user',
   },
   {
@@ -167,7 +167,7 @@ export const DIFFERENTIATORS = [
   },
   {
     title: 'Long-Term Relationship Mindset',
-    description: 'Built for relationships that last years and decades—not quick sales or short-term transactions.',
+    description: 'Built for relationships that last for years and decades, rather than quick sales or one-off transactions.',
     icon: 'handshake',
   },
   {
@@ -177,7 +177,7 @@ export const DIFFERENTIATORS = [
   },
   {
     title: 'Focused & Responsible Scope',
-    description: 'Goal-based mutual fund investing and insurance—without direct equity trading, F&O or speculative products.',
+    description: 'Disciplined mutual fund distribution and insurance planning, without direct equity trading, F&O, or speculative products.',
     icon: 'focus',
   },
 ] as const;

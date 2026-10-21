@@ -36,7 +36,7 @@ export default function AboutProcess() {
     <SectionWrapper background="light" id="about-process">
       <SectionHeading
         eyebrow="How We Work"
-        title="A disciplined, goal-first approach"
+        title="A disciplined approach to investing"
         subtitle="Putting your family's aspirations and long-term security at the center of every decision."
       />
 

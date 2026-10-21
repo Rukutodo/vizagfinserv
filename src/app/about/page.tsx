@@ -19,7 +19,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About VizagFinServ"
         title="We don't just invest your money. We invest in your plans."
-        subtitle="Every family we meet is working toward something specific — a child's education, a first home, a retirement that feels secure. We start with that goal, then build a disciplined, long-term investing approach around it."
+        subtitle="Every family we meet is working toward something specific: a child's education, a first home, or a secure retirement. We start with that goal, then build a disciplined investing approach around it."
       />
       <BusinessSnapshot />
       <AboutSreekar linkToPage={false} />
