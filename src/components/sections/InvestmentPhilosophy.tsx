@@ -62,7 +62,7 @@ export default function InvestmentPhilosophy() {
 
           <div className="space-y-4 text-brand-100/80 text-sm md:text-base leading-relaxed">
             <p>
-              Whether it&apos;s building a retirement corpus, funding your child&apos;s education, saving for a home, or creating long-term financial independence—meaningful goals deserve a disciplined and thoughtful approach.
+              Whether it&apos;s building a retirement corpus, funding your child&apos;s education, saving for a home, or creating long-term financial independence, meaningful goals deserve a disciplined and thoughtful approach.
             </p>
             <p>
               We believe in staying invested through market cycles rather than reacting to short-term volatility. Discipline and patience have historically been more reliable allies than market timing.

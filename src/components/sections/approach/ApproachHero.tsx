@@ -36,7 +36,7 @@ export default function ApproachHero() {
             <span className="text-brand-300">purpose & discipline</span>
           </h1>
           <p className="text-lg md:text-xl text-brand-200/80 leading-relaxed">
-            We don&apos;t chase trends. We build portfolios around what matters most to you—your
+            We don&apos;t chase trends. We build portfolios around what matters most to you: your
             goals, your timeline, and your peace of mind.
           </p>
         </motion.div>

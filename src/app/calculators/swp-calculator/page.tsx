@@ -45,7 +45,7 @@ export default function SWPCalculatorPage() {
                 What is an SWP Calculator?
               </h3>
               <p>
-                An SWP (Systematic Withdrawal Plan) calculator is a tool designed to help you determine the cash flows and remaining balance of your mutual fund investments when you make regular withdrawals. Unlike a SIP where you put money in, an SWP allows you to systematically take money out of your accumulated corpus — making it a popular choice for retirees seeking monthly pension-like income.
+                An SWP (Systematic Withdrawal Plan) calculator is a tool designed to help you determine the cash flows and remaining balance of your mutual fund investments when you make regular withdrawals. Unlike a SIP where you put money in, an SWP allows you to systematically take money out of your accumulated corpus, making it a popular choice for retirees seeking monthly pension-like income.
               </p>
             </section>
 

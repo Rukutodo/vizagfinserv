@@ -31,7 +31,7 @@ const DETAILED_SERVICES = [
     title: 'STP / SWP Structuring',
     shortDesc: 'Systematic Transfer and Withdrawal Plans for phased investing or income.',
     fullDesc:
-      'Systematic Transfer Plans (STP) are crucial for mitigating timing risk when investing large amounts into equities. We structure STPs to gradually move your funds from debt to equity. Conversely, when you need regular income—like during retirement—we design tax-efficient Systematic Withdrawal Plans (SWP) that provide a steady cash flow while keeping the principal invested for continued growth.',
+      'Systematic Transfer Plans (STP) are crucial for mitigating timing risk when investing large amounts into equities. We structure STPs to gradually move your funds from debt to equity. Conversely, when you need regular income, such as during retirement, we design tax-efficient Systematic Withdrawal Plans (SWP) that provide a steady cash flow while keeping the principal invested for continued growth.',
     image: '/images/service-stp-swp.jpg',
   },
   {

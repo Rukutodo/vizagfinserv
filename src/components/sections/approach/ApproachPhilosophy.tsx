@@ -9,7 +9,7 @@ const BELIEFS = [
   {
     title: 'Your goals shape the plan',
     description:
-      'Every investment we recommend starts with a deep understanding of what you\u0027re working towards—not what\u0027s trending in the market.',
+      'Every investment we recommend starts with a deep understanding of what you\u0027re working towards, not what\u0027s trending in the market.',
   },
   {
     title: 'Discipline beats timing',
@@ -19,7 +19,7 @@ const BELIEFS = [
   {
     title: 'Compounding rewards patience',
     description:
-      'The most powerful force in investing works silently over time. Staying invested through volatility is often the hardest—and most rewarding—choice.',
+      'The most powerful force in investing works silently over time. Staying invested through volatility is often the hardest, and most rewarding, choice.',
   },
 ];
 

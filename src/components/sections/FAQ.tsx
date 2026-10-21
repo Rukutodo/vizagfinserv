@@ -9,7 +9,7 @@ const FAQS = [
   {
     question: 'What is a Mutual Fund Distributor (MFD)?',
     answer:
-      'A Mutual Fund Distributor is an AMFI-registered professional who helps investors choose and invest in mutual fund schemes. We guide you through the process—from understanding your goals to selecting the right funds—and provide ongoing support throughout your investment journey.',
+      'A Mutual Fund Distributor is an AMFI-registered professional who helps investors choose and invest in mutual fund schemes. We guide you through the process, from understanding your goals to selecting the right funds, and provide ongoing support throughout your investment journey.',
   },
   {
     question: 'How do I start investing with VizagFinServ?',

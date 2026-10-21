@@ -25,7 +25,7 @@ export default function ResourcesCTA() {
             See how your goals could grow
           </h2>
           <p className="text-base md:text-lg text-brand-200/80 leading-relaxed mb-10">
-            Use our calculators to estimate SIPs, lumpsum growth, retirement corpus and more—then talk to us about turning the numbers into a plan.
+            Use our calculators to estimate SIPs, lumpsum growth, retirement corpus, and more, then talk to us about turning the numbers into a plan.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

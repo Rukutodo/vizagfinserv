@@ -16,7 +16,7 @@ const TESTIMONIALS = [
     name: 'Priya M.',
     role: 'IT Professional',
     quote:
-      'What I appreciate most is the transparency. There are no hidden agendas—just honest advice that always puts our family\'s interests first. We\'ve been investing with VizagFinServ for over 3 years now.',
+      'What I appreciate most is the transparency. There are no hidden agendas, just honest advice that always puts our family\'s interests first. We\'ve been investing with VizagFinServ for over 3 years now.',
     rating: 5,
   },
   {
@@ -30,7 +30,7 @@ const TESTIMONIALS = [
     name: 'Sunitha D.',
     role: 'Doctor',
     quote:
-      'I was new to mutual funds and had many questions. Sreekar took the time to walk me through everything—from SIPs to goal planning. His multi-generational experience really shows.',
+      'I was new to mutual funds and had many questions. Sreekar took the time to walk me through everything, from SIPs to goal planning. His multi-generational experience really shows.',
     rating: 5,
   },
 ];
