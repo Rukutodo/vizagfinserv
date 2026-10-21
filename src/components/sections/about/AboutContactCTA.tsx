@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import Button from '@/components/ui/Button';
 import { CONTACT } from '@/lib/constants';
@@ -9,8 +10,12 @@ export default function AboutContactCTA() {
   return (
     <SectionWrapper background="white" id="about-contact">
       <div className="max-w-4xl mx-auto bg-gradient-to-br from-brand-900 to-brand-950 text-white rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
-        {/* Decorative background blur */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-brand-500/10 rounded-full blur-[80px] pointer-events-none" />
+        {/* Animated decorative background blur */}
+        <motion.div
+          animate={{ scale: [1, 1.25, 1], opacity: [0.15, 0.35, 0.15] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute top-0 right-0 w-80 h-80 bg-brand-400/20 rounded-full blur-[90px] pointer-events-none"
+        />
 
         <div className="relative z-10 text-center max-w-2xl mx-auto mb-10">
           <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-brand-300 mb-3">
@@ -26,16 +31,24 @@ export default function AboutContactCTA() {
 
         {/* Contact info grid */}
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center flex flex-col items-center">
+          <motion.div
+            whileHover={{ y: -6, scale: 1.03 }}
+            transition={{ type: 'spring', stiffness: 350, damping: 22 }}
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center flex flex-col items-center cursor-default"
+          >
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-brand-300 mb-3">
               <MapPinIcon className="w-5 h-5" />
             </div>
             <p className="text-xs text-brand-300 uppercase tracking-wider mb-1">Advisor &amp; Location</p>
             <p className="text-sm font-semibold text-white">Sasanapuri Sreekar</p>
             <p className="text-xs text-brand-200">{CONTACT.location}</p>
-          </div>
+          </motion.div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center flex flex-col items-center">
+          <motion.div
+            whileHover={{ y: -6, scale: 1.03 }}
+            transition={{ type: 'spring', stiffness: 350, damping: 22 }}
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center flex flex-col items-center"
+          >
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-brand-300 mb-3">
               <PhoneIcon className="w-5 h-5" />
             </div>
@@ -47,9 +60,13 @@ export default function AboutContactCTA() {
               {CONTACT.phone}
             </a>
             <p className="text-xs text-brand-200">Call or WhatsApp</p>
-          </div>
+          </motion.div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center flex flex-col items-center">
+          <motion.div
+            whileHover={{ y: -6, scale: 1.03 }}
+            transition={{ type: 'spring', stiffness: 350, damping: 22 }}
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center flex flex-col items-center"
+          >
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-brand-300 mb-3">
               <MailIcon className="w-5 h-5" />
             </div>
@@ -61,7 +78,7 @@ export default function AboutContactCTA() {
               {CONTACT.email}
             </a>
             <p className="text-xs text-brand-200">Direct Inquiries</p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Credentials row */}

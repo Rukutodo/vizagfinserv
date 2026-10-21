@@ -12,10 +12,11 @@ export default function AboutSreekar({ linkToPage = true }: { linkToPage?: boole
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-center">
         {/* Portrait */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.93, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          whileHover={{ scale: 1.025 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="lg:col-span-2 flex justify-center"
         >
           <div className="relative w-64 h-72 md:w-80 md:h-[360px] rounded-2xl overflow-hidden shadow-xl shadow-brand-100/40">
@@ -42,10 +43,10 @@ export default function AboutSreekar({ linkToPage = true }: { linkToPage?: boole
 
         {/* Text */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 30, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="lg:col-span-3"
         >
           <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-brand-600 mb-3">

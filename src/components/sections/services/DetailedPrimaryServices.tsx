@@ -65,10 +65,10 @@ export default function DetailedPrimaryServices() {
           return (
             <motion.article
               key={service.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0, y: 60, filter: 'blur(8px)', scale: 0.985 }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className={`flex flex-col gap-8 lg:gap-14 items-center ${
                 isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
               }`}

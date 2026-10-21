@@ -44,10 +44,11 @@ export default function AboutProcess() {
         {steps.map((step, index) => (
           <motion.div
             key={step.number}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
+            whileHover={{ y: -8, scale: 1.025 }}
+            transition={{ duration: 0.55, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
             className="bg-white p-6 md:p-7 rounded-2xl border border-neutral-200/80 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between"
           >
             <div>

@@ -21,10 +21,11 @@ export default function PrincipleCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.12 }}
+      whileHover={{ y: -8, scale: 1.025 }}
+      transition={{ duration: 0.55, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
       className={`group relative p-5 md:p-7 rounded-xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
         isDark 
           ? 'bg-white/5 border-white/10 hover:border-brand-400 hover:bg-white/10 hover:shadow-brand-900/50' 

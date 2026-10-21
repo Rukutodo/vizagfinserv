@@ -33,10 +33,11 @@ export default function AboutScopeBento() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-6xl mx-auto">
         {/* Card 1: Mutual Funds (Col 7) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          whileHover={{ y: -8, scale: 1.015 }}
+          transition={{ duration: 0.55, delay: 0, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-7 bg-brand-900 text-white rounded-3xl p-8 md:p-10 flex flex-col justify-between shadow-xl relative overflow-hidden group"
         >
           {/* Subtle background glow */}
@@ -83,10 +84,11 @@ export default function AboutScopeBento() {
 
         {/* Card 2: Other Financial Products (Col 5) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          whileHover={{ y: -8, scale: 1.015 }}
+          transition={{ duration: 0.55, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-5 bg-white border border-neutral-200/80 rounded-3xl p-8 md:p-10 flex flex-col justify-between shadow-sm relative overflow-hidden"
         >
           <div>
@@ -131,10 +133,11 @@ export default function AboutScopeBento() {
 
         {/* Card 3: What We Don't Do - No Speculation (Col 6) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.15 }}
+          whileHover={{ y: -8, scale: 1.015 }}
+          transition={{ duration: 0.55, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-6 bg-white border border-neutral-200/80 rounded-3xl p-8 shadow-sm flex flex-col justify-between"
         >
           <div>
@@ -162,10 +165,11 @@ export default function AboutScopeBento() {
 
         {/* Card 4: What We Don't Do - Open Compensation (Col 6) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          whileHover={{ y: -8, scale: 1.015 }}
+          transition={{ duration: 0.55, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-6 bg-white border border-neutral-200/80 rounded-3xl p-8 shadow-sm flex flex-col justify-between"
         >
           <div>

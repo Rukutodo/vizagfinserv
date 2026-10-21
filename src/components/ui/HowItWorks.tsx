@@ -146,7 +146,7 @@ export default function HowItWorks({
     {
       title: "Invest",
       description:
-        "We support the investment process—whether through SIPs, lumpsum investments, STPs or other relevant routes.",
+        "We support the investment process, whether through SIPs, lumpsum investments, STPs or other relevant routes.",
       colorTheme: "teal",
     },
     {
