@@ -28,7 +28,7 @@ export default function ApproachWhyUs() {
       <SectionHeading
         eyebrow="Why Work With Us"
         title="Built for trust, not transactions"
-        subtitle="What makes our approach different—focused on relationships, transparency and your long-term financial well-being."
+        subtitle="What makes our approach different, focused on relationships, transparency and your long-term financial well-being."
         light={true}
       />
 
@@ -39,10 +39,11 @@ export default function ApproachWhyUs() {
           return (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, x: isEven ? -25 : 25 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: isEven ? -35 : 35, filter: 'blur(6px)' }}
+              whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+              whileHover={{ scale: 1.025, y: -6 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
+              transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className={`flex items-start gap-5 md:gap-8 p-6 md:p-8 rounded-2xl mb-6 bg-white shadow-xl shadow-black/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-900/30 ${
                 isEven ? '' : 'md:flex-row-reverse md:text-right'
               }`}

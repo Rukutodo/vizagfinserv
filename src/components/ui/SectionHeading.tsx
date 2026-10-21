@@ -23,38 +23,50 @@ export default function SectionHeading({
   const maxW = align === 'center' ? 'max-w-2xl' : '';
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className={`mb-8 md:mb-10 ${alignClass} ${maxW} ${className}`}
-    >
+    <div className={`mb-8 md:mb-12 ${alignClass} ${maxW} ${className}`}>
       {eyebrow && (
-        <span
-          className={`inline-block text-xs font-semibold tracking-[0.2em] uppercase mb-3 ${
-            light ? 'text-brand-300' : 'text-brand-600'
-          }`}
+        <motion.div
+          initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-3"
         >
-          {eyebrow}
-        </span>
+          <span
+            className={`inline-block text-xs font-semibold tracking-[0.2em] uppercase ${
+              light ? 'text-brand-300' : 'text-brand-600'
+            }`}
+          >
+            {eyebrow}
+          </span>
+        </motion.div>
       )}
-      <h2
-        className={`text-3xl md:text-4xl lg:text-[2.75rem] font-semibold leading-tight ${
+
+      <motion.h2
+        initial={{ opacity: 0, y: 24, filter: 'blur(8px)', scale: 0.98 }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.75, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+        className={`text-3xl md:text-4xl lg:text-[2.75rem] font-semibold leading-tight font-heading ${
           light ? 'text-white' : 'text-brand-900'
         }`}
       >
         {title}
-      </h2>
+      </motion.h2>
+
       {subtitle && (
-        <p
+        <motion.p
+          initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.75, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
           className={`mt-4 text-base md:text-lg leading-relaxed ${
             light ? 'text-brand-200' : 'text-neutral-600'
           }`}
         >
           {subtitle}
-        </p>
+        </motion.p>
       )}
-    </motion.div>
+    </div>
   );
 }

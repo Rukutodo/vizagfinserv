@@ -18,12 +18,12 @@ export default function InvestmentPhilosophy() {
           transition={{ duration: 0.6 }}
           className="relative order-2 lg:order-1"
         >
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-black/40 group">
             <Image
               src="/images/philosophy.webp"
               alt="Family discussing long-term financial goals"
               fill
-              className="object-cover"
+              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-950/60 via-brand-950/20 to-transparent" />
@@ -35,7 +35,9 @@ export default function InvestmentPhilosophy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="absolute -bottom-6 -right-4 md:right-8 bg-white rounded-xl shadow-xl p-4 md:p-5 border border-brand-100 max-w-[220px] text-left"
+            animate={{ y: [-6, 6, -6] }}
+            whileHover={{ scale: 1.05 }}
+            className="absolute -bottom-6 -right-4 md:right-8 bg-white rounded-xl shadow-2xl p-4 md:p-5 border border-brand-100 max-w-[220px] text-left z-20 cursor-default"
           >
             <p className="text-sm font-semibold text-brand-900">Goals-First Approach</p>
             <p className="text-xs text-neutral-600 mt-1">
@@ -55,7 +57,7 @@ export default function InvestmentPhilosophy() {
           <SectionHeading
             eyebrow="Investment Philosophy"
             title="Goals come before products"
-            subtitle="The right investment approach starts with understanding what you're working towards—not which fund is trending today."
+            subtitle="The right investment approach starts with understanding what you're working towards, not which fund is trending today."
             align="left"
             light={true}
           />

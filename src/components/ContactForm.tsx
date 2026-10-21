@@ -148,8 +148,8 @@ export default function ContactForm() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 35, scale: 0.985, filter: 'blur(6px)' }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.7, ease: EASE_OUT_EXPO }}
       className="rounded-2xl bg-white border border-neutral-200 p-6 sm:p-8 md:p-10 shadow-card"

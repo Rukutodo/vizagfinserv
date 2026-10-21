@@ -37,7 +37,7 @@ export default function ApproachPhilosophy() {
           <SectionHeading
             eyebrow="Our Philosophy"
             title="Goals come before products"
-            subtitle="The right investment approach starts with understanding what you're working towards—not which fund is trending today."
+            subtitle="The right investment approach starts with understanding what you're working towards, not which fund is trending today."
             align="left"
           />
 
@@ -45,10 +45,11 @@ export default function ApproachPhilosophy() {
             {BELIEFS.map((belief, i) => (
               <motion.div
                 key={belief.title}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 25, filter: 'blur(4px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                whileHover={{ x: 6 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="flex gap-4"
               >
                 <div className="shrink-0 mt-1 w-8 h-8 rounded-lg bg-brand-900 text-white flex items-center justify-center text-sm font-bold shadow-sm">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, type ReactNode } from "react";
+import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 
 export const formatCurrency = (value: number) => {
@@ -43,9 +44,14 @@ function useCalculatorStyles() {
 export function CalculatorCard({ children }: { children: ReactNode }) {
   useCalculatorStyles();
   return (
-    <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-white max-w-5xl mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 35, scale: 0.985, filter: "blur(6px)" }}
+      animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+      transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+      className="bg-white rounded-2xl shadow-xl overflow-hidden border border-white max-w-5xl mx-auto"
+    >
       <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-10">{children}</div>
-    </div>
+    </motion.div>
   );
 }
 
