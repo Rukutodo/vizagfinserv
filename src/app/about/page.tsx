@@ -8,9 +8,35 @@ import AboutScopeBento from '@/components/sections/about/AboutScopeBento';
 import AboutContactCTA from '@/components/sections/about/AboutContactCTA';
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About Sasanapuri Sreekar — AMFI-Registered MFD Since 2018',
   description:
-    'We don’t just invest your money. We invest in your plans. Learn about VizagFinServ (Sasanapuri Sreekar), an AMFI-Registered Mutual Fund Distributor based in Visakhapatnam, Andhra Pradesh.',
+    'Meet Sasanapuri Sreekar, the AMFI-Registered Mutual Fund Distributor (ARN 138117) behind VizagFinServ. Serving 100+ families in Visakhapatnam with ₹140 Cr+ under distribution since 2018 — built on goal-based planning, disciplined investing, and long-term relationships.',
+  keywords: [
+    'Sasanapuri Sreekar',
+    'VizagFinServ founder',
+    'AMFI registered distributor Vizag',
+    'mutual fund distributor Visakhapatnam',
+    'ARN 138117',
+    'goal-based financial planning',
+    'about VizagFinServ',
+  ],
+  openGraph: {
+    title: 'About VizagFinServ — Meet the Distributor Behind 100+ Family Portfolios',
+    description:
+      'Sasanapuri Sreekar (ARN 138117) has been helping families in Visakhapatnam build disciplined mutual fund portfolios since 2018. ₹140 Cr+ under distribution, process-driven, goal-first.',
+    url: 'https://vizagfinserv.com/about',
+    siteName: 'VizagFinServ',
+    locale: 'en_IN',
+    type: 'profile',
+    images: [{ url: '/images/about-portrait.webp', width: 1200, height: 630, alt: 'Sasanapuri Sreekar — VizagFinServ' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About VizagFinServ — Sasanapuri Sreekar, AMFI-Registered MFD',
+    description: 'Goal-based mutual fund distribution for 100+ families in Visakhapatnam since 2018. Meet the distributor.',
+    images: ['/images/about-portrait.webp'],
+  },
+  alternates: { canonical: 'https://vizagfinserv.com/about' },
 };
 
 export default function AboutPage() {

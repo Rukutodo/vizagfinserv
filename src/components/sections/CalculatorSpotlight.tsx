@@ -7,7 +7,7 @@ const CALCULATORS = [
   {
     name: 'SIP',
     desc: 'Monthly growth',
-    href: '/calculators/sip-calculator',
+    href: '/calculators?tab=sip',
     color: 'text-emerald-600 bg-emerald-50',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -18,7 +18,7 @@ const CALCULATORS = [
   {
     name: 'Step-Up',
     desc: 'Annual increments',
-    href: '/calculators/step-up-calculator',
+    href: '/calculators?tab=stepup',
     color: 'text-blue-600 bg-blue-50',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -29,7 +29,7 @@ const CALCULATORS = [
   {
     name: 'Retirement',
     desc: 'Target corpus',
-    href: '/calculators/retirement-calculator',
+    href: '/calculators?tab=retirement',
     color: 'text-amber-600 bg-amber-50',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -40,7 +40,7 @@ const CALCULATORS = [
   {
     name: 'SWP',
     desc: 'Regular pension',
-    href: '/calculators/swp-calculator',
+    href: '/calculators?tab=swp',
     color: 'text-purple-600 bg-purple-50',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -51,7 +51,7 @@ const CALCULATORS = [
   {
     name: 'Inflation',
     desc: 'Cost of living',
-    href: '/calculators/inflation-calculator',
+    href: '/calculators?tab=inflation',
     color: 'text-rose-600 bg-rose-50',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -62,7 +62,7 @@ const CALCULATORS = [
   {
     name: 'EMI',
     desc: 'Loan planner',
-    href: '/calculators/emi-calculator',
+    href: '/calculators?tab=emi',
     color: 'text-sky-600 bg-sky-50',
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

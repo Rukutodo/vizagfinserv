@@ -1,0 +1,25 @@
+/* TEAM */
+Founder & Mutual Fund Distributor: Sasanapuri Sreekar
+ARN: 138117 (AMFI-Registered Mutual Fund Distributor)
+EUIN: E233588
+Location: Visakhapatnam, Andhra Pradesh, India
+Contact: funds844@gmail.com | +91 90878 59350
+Website: https://vizagfinserv.com/about
+
+/* ORGANIZATION */
+Name: VizagFinServ
+Legal Entity: Mutual Fund Distribution Firm
+Established: 2018
+Focus: Goal-Based Mutual Fund Planning, SIP, SWP, STP, Portfolio Reviews
+Assets Under Distribution: ₹140 Cr+
+Families Served: 100+
+City: Visakhapatnam, Andhra Pradesh, India
+Website: https://vizagfinserv.com
+
+/* SITE */
+Standards: HTML5, CSS3, Schema.org JSON-LD, OpenGraph, Web App Manifest
+Framework: Next.js (React)
+Typography: Inter, Playfair Display
+Language: English (India)
+Software: Antigravity IDE
+Last Updated: 2026-10-22

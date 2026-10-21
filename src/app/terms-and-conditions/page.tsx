@@ -3,9 +3,20 @@ import PageHero from '@/components/PageHero';
 import { CONTACT } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions',
-  description: 'Terms and Conditions for using VizagFinServ website and services.',
+  title: 'Terms & Conditions — Usage & Legal Disclosures',
+  description:
+    'Terms and Conditions governing the use of VizagFinServ\'s website and mutual fund distribution services. Read before engaging our services. AMFI-Registered MFD (ARN 138117), Visakhapatnam.',
+  openGraph: {
+    title: 'Terms & Conditions — VizagFinServ',
+    description: 'Legal terms governing the use of VizagFinServ\'s website and mutual fund distribution services.',
+    url: 'https://vizagfinserv.com/terms-and-conditions',
+    type: 'website',
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'VizagFinServ' }],
+  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: 'https://vizagfinserv.com/terms-and-conditions' },
 };
+
 
 export default function TermsAndConditionsPage() {
   return (

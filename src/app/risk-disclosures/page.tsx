@@ -3,9 +3,27 @@ import PageHero from '@/components/PageHero';
 import { CONTACT } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Risk Disclosures',
-  description: 'Important risk disclosures regarding mutual fund investments and the services provided by VizagFinServ.',
+  title: 'Risk Disclosures — Mutual Fund Investment Risks',
+  description:
+    'Important risk disclosures for mutual fund investors: market risk, credit risk, liquidity risk, and regulatory considerations. Mandatory reading before investing through VizagFinServ — AMFI-Registered MFD (ARN 138117), Visakhapatnam.',
+  keywords: [
+    'mutual fund risk disclosure',
+    'investment risk warning India',
+    'market risk mutual funds',
+    'SEBI risk disclosure',
+    'VizagFinServ risk',
+  ],
+  openGraph: {
+    title: 'Risk Disclosures — VizagFinServ',
+    description: 'Understand the risks associated with mutual fund investments before you invest.',
+    url: 'https://vizagfinserv.com/risk-disclosures',
+    type: 'website',
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'VizagFinServ' }],
+  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: 'https://vizagfinserv.com/risk-disclosures' },
 };
+
 
 export default function RiskDisclosuresPage() {
   return (
