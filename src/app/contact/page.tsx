@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'mutual fund distributor contact Vizag',
     'investment consultation Visakhapatnam',
     'VizagFinServ phone number',
-    'mutual fund advisor near me',
+    'mutual fund distributor near me',
     'financial planning consultation',
     'ARN 138117 contact',
   ],
