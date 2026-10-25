@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    dangerouslyAllowSVG: true,
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/logo.svg",
+        destination: "/Logo.svg",
+      },
+    ];
+  },
   async redirects() {
     return [
       {

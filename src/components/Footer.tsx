@@ -13,11 +13,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-block">
-              <h3 className="text-xl font-bold font-heading text-white leading-tight">
-                VizagFinServ
-              </h3>
-              <p className="text-xs text-brand-300 uppercase tracking-wide mt-1">
+            <Link 
+              href="/" 
+              className="inline-block group transform transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]"
+              aria-label="VizagFinServ Home"
+            >
+              <div className="inline-flex items-center justify-center bg-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-md shadow-black/20 border border-white/20 group-hover:shadow-lg transition-all duration-300">
+                <Image
+                  src="/Logo.svg"
+                  alt="VizagFinServ"
+                  width={150}
+                  height={42}
+                  unoptimized
+                  className="h-8 sm:h-9 md:h-10 w-auto object-contain"
+                />
+              </div>
+              <p className="text-xs text-brand-300 uppercase tracking-wide mt-2.5 font-medium">
                 {CONTACT.designation}
               </p>
             </Link>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_ITEMS, CONTACT } from '@/lib/constants';
@@ -44,33 +45,40 @@ export default function Header() {
           : 'bg-white border-neutral-100'
       }`}
     >
-      <div className="container-narrow">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20 gap-3 lg:gap-5">
           {/* Logo / Brand */}
           <Link 
             href="/" 
-            className="flex flex-col justify-center group transform transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]" 
+            className="flex items-center shrink-0 mr-2 xl:mr-4 transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]" 
             onClick={() => setIsOpen(false)}
+            aria-label="VizagFinServ Home"
           >
-            <span className="text-lg md:text-xl font-bold text-brand-900 font-heading tracking-tight leading-tight">
-              VizagFinServ
-            </span>
+            <Image
+              src="/Logo.svg"
+              alt="VizagFinServ"
+              width={160}
+              height={44}
+              priority
+              unoptimized
+              className="h-9 sm:h-10 md:h-11 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main navigation">
             {NAV_ITEMS.map((item) => {
               const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative inline-block px-3 py-2 text-sm font-medium transition-all duration-300 group hover:-translate-y-0.5 ${
+                  className={`relative inline-flex items-center px-2.5 xl:px-3.5 py-2 text-sm xl:text-[15px] font-medium whitespace-nowrap transition-all duration-200 group hover:-translate-y-0.5 ${
                     isActive ? 'text-brand-900 font-semibold' : 'text-neutral-700 hover:text-brand-900'
                   }`}
                 >
                   {item.label}
-                  <span className={`absolute bottom-1 left-3 right-3 h-[2px] bg-brand-800 rounded-full transition-transform duration-300 ease-out origin-left ${
+                  <span className={`absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-brand-800 rounded-full transition-transform duration-300 ease-out origin-left ${
                     isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                   }`} />
                 </Link>
@@ -79,26 +87,27 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA + Mobile Controls */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             {/* Desktop Only Actions (Login + Start a Conversation) */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-3">
               <a
                 href="https://wealthelite.in/client-login"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-brand-900 rounded-full transition-all duration-300 group ${
+                className={`flex items-center gap-2 px-4 xl:px-5 py-2 text-sm font-semibold text-brand-900 rounded-full whitespace-nowrap transition-all duration-300 group ${
                   isScrolled
-                    ? 'bg-white border border-neutral-200/90 shadow-md shadow-brand-900/10 hover:border-brand-400 hover:shadow-lg'
-                    : 'bg-transparent border-2 border-brand-200 hover:bg-brand-50 hover:border-brand-300 hover:shadow-sm'
+                    ? 'bg-white border border-neutral-200 shadow-sm hover:border-brand-400 hover:shadow-md'
+                    : 'bg-transparent border border-brand-200 hover:bg-brand-50 hover:border-brand-300'
                 }`}
               >
-                <UserIcon className="w-4 h-4 text-brand-900 group-hover:scale-110 transition-transform" />
-                <span>Client Login</span>
+                <UserIcon className="w-4 h-4 text-brand-900 group-hover:scale-110 transition-transform shrink-0" />
+                <span className="whitespace-nowrap">Client Login</span>
               </a>
 
               <Button
                 href="/contact"
                 size="sm"
+                className="!px-4 xl:!px-5 !py-2 !text-sm whitespace-nowrap shadow-sm hover:shadow-md"
               >
                 Start a Conversation
               </Button>
