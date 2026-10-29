@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import SectionHeading from '@/components/ui/SectionHeading';
 
-const FAQS = [
+export const FAQS = [
   {
     question: 'What is a Mutual Fund Distributor (MFD)?',
     answer:
@@ -42,6 +42,19 @@ const FAQS = [
       'With 30+ years of collective family experience in mutual fund distribution, we bring a multi-generational approach rooted in trust and discipline. We focus on goal-based investing, maintain complete transparency, and build long-term relationships rather than chasing short-term transactions.',
   },
 ];
+
+export const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 
 function FAQItem({
   question,
@@ -127,6 +140,11 @@ export default function FAQ() {
 
   return (
     <SectionWrapper background="light" id="faq">
+      {/* Schema.org FAQPage Structured Data for Google Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <SectionHeading
         eyebrow="Frequently Asked Questions"
         title="Common Questions, Clear Answers"

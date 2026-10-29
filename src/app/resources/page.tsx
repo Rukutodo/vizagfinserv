@@ -7,9 +7,45 @@ import OfficialResources from '@/components/sections/resources/OfficialResources
 import ResourcesCTA from '@/components/sections/resources/ResourcesCTA';
 
 export const metadata: Metadata = {
-  title: 'Resources',
+  title: 'Investor Resources — Mutual Fund Glossary, Guides & FAQs',
   description:
-    'Educational resources, investor guides, and financial literacy content to help you make informed investment decisions.',
+    'Free educational resources for mutual fund investors: a comprehensive glossary (SIP, NAV, SWP, ELSS and more), frequently asked questions, official AMFI/SEBI links, and beginner-friendly guides. Curated by VizagFinServ.',
+  keywords: [
+    'mutual fund glossary',
+    'SIP meaning',
+    'NAV explained',
+    'SWP STP meaning',
+    'mutual fund FAQ India',
+    'investor education',
+    'AMFI resources',
+    'SEBI investor portal',
+    'mutual fund terms',
+    'VizagFinServ resources',
+  ],
+  openGraph: {
+    title: 'Investor Resources — Glossary, FAQs & Official Links',
+    description:
+      'Everything you need to understand mutual fund investing: plain-language glossary, FAQs, and official AMFI/SEBI links — curated by VizagFinServ.',
+    url: 'https://vizagfinserv.com/resources',
+    siteName: 'VizagFinServ',
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Mutual Fund Resources & FAQs — VizagFinServ',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mutual Fund Resources — Glossary, FAQs & Guides | VizagFinServ',
+    description: 'Free investor education: mutual fund glossary, FAQs, and official AMFI/SEBI links.',
+    images: ['/images/og-image.jpg'],
+  },
+  alternates: { canonical: 'https://vizagfinserv.com/resources' },
 };
 
 export default function ResourcesPage() {

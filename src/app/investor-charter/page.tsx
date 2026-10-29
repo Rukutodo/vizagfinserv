@@ -3,9 +3,28 @@ import PageHero from '@/components/PageHero';
 import { CONTACT } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Investor Charter',
-  description: 'Investor Charter outlining the rights, responsibilities, and do\'s and don\'ts for mutual fund investors.',
+  title: 'Investor Charter — Your Rights & Responsibilities',
+  description:
+    'Investor Charter for mutual fund investors: know your rights, responsibilities, do\'s and don\'ts as mandated by SEBI & AMFI. Published by VizagFinServ — AMFI-Registered Mutual Fund Distributor (ARN 138117), Visakhapatnam.',
+  keywords: [
+    'investor charter mutual fund',
+    'SEBI investor rights',
+    'mutual fund investor responsibilities',
+    'AMFI investor charter',
+    'investor do\'s and don\'ts',
+    'VizagFinServ investor charter',
+  ],
+  openGraph: {
+    title: 'Investor Charter — VizagFinServ',
+    description: 'Know your rights and responsibilities as a mutual fund investor, as mandated by SEBI & AMFI.',
+    url: 'https://vizagfinserv.com/investor-charter',
+    type: 'website',
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'VizagFinServ' }],
+  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: 'https://vizagfinserv.com/investor-charter' },
 };
+
 
 export default function InvestorCharterPage() {
   return (

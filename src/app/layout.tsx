@@ -21,34 +21,51 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "VizagFinServ | AMFI-Registered Mutual Fund Distributor | Visakhapatnam",
+    default: "VizagFinServ — AMFI-Registered Mutual Fund Distributor | Visakhapatnam",
     template: "%s | VizagFinServ",
   },
   description:
-    "VizagFinServ (Sasanapuri Sreekar) is an AMFI-Registered Mutual Fund Distributor (ARN 138117) based in Visakhapatnam, helping families invest in mutual funds with clarity, discipline and a long-term approach.",
+    "VizagFinServ (Sasanapuri Sreekar, ARN 138117) is an AMFI-Registered Mutual Fund Distributor based in Visakhapatnam, helping 100+ families invest in mutual funds with clarity, discipline and a long-term approach.",
   keywords: [
-    "mutual fund distributor",
-    "AMFI registered",
-    "Visakhapatnam",
-    "Vizag",
-    "SIP",
-    "goal-based investing",
-    "mutual fund",
+    "VizagFinServ",
+    "mutual fund distributor Visakhapatnam",
+    "AMFI registered distributor Vizag",
     "Sasanapuri Sreekar",
     "ARN 138117",
-    "financial planning",
-    "investment",
+    "EUIN E233588",
+    "SIP investment Visakhapatnam",
+    "goal-based financial planning",
+    "mutual fund portfolio review",
+    "SWP pension planning India",
+    "wealth creation Visakhapatnam",
+    "best mutual fund distributor Andhra Pradesh",
   ],
-  authors: [{ name: "Sasanapuri Sreekar" }],
+  authors: [
+    { name: "Sasanapuri Sreekar", url: "https://vizagfinserv.com/about" },
+    { name: "VizagFinServ", url: "https://vizagfinserv.com" },
+  ],
   creator: "Sasanapuri Sreekar",
+  publisher: "VizagFinServ",
+  applicationName: "VizagFinServ",
+  category: "Finance",
+  classification: "Financial Services / Mutual Fund Distribution",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://vizagfinserv.com"),
+  alternates: {
+    canonical: "https://vizagfinserv.com",
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://vizagfinserv.com",
     siteName: "VizagFinServ",
-    title: "VizagFinServ | AMFI-Registered Mutual Fund Distributor",
+    title: "VizagFinServ — AMFI-Registered Mutual Fund Distributor | Visakhapatnam",
     description:
-      "Helping families invest in mutual funds with clarity, discipline and a long-term approach. AMFI-Registered MFD since 2018.",
+      "Helping 100+ families invest in mutual funds with clarity, discipline and a long-term approach. AMFI-Registered MFD (ARN 138117) since 2018.",
     images: [
       {
         url: "/images/og-image.jpg",
@@ -60,15 +77,29 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "VizagFinServ | AMFI-Registered Mutual Fund Distributor",
+    title: "VizagFinServ — AMFI-Registered Mutual Fund Distributor",
     description:
       "Helping families invest in mutual funds with clarity, discipline and a long-term approach.",
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
-  metadataBase: new URL("https://vizagfinserv.com"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -83,11 +114,16 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} h-full`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="author" href="/humans.txt" />
         <meta name="theme-color" content="#0F2A4A" />
       </head>
       <body className="min-h-full flex flex-col antialiased" suppressHydrationWarning>
@@ -98,37 +134,115 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <WhatsAppFloat />
         <RegulatoryStrip />
 
-        {/* JSON-LD Schema Markup */}
+        {/* Schema.org Connected Graph: Organization (VizagFinServ) + Human (Sasanapuri Sreekar) + WebSite */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "FinancialService",
-              name: "VizagFinServ — AMFI-Registered Mutual Fund Distributor",
-              alternateName: "VizagFinServ",
-              description:
-                "AMFI-Registered Mutual Fund Distributor helping families invest with clarity, discipline and a long-term approach.",
-              url: "https://vizagfinserv.com",
-              telephone: "+919087859350",
-              email: "funds844@gmail.com",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Visakhapatnam",
-                addressRegion: "Andhra Pradesh",
-                addressCountry: "IN",
-              },
-              founder: {
-                "@type": "Person",
-                name: "Sasanapuri Sreekar",
-                jobTitle: "AMFI-Registered Mutual Fund Distributor",
-              },
-              areaServed: {
-                "@type": "Place",
-                name: "India",
-              },
-              serviceType: "Mutual Fund Distribution",
-              foundingDate: "2018",
+              "@graph": [
+                {
+                  "@type": ["FinancialService", "Organization"],
+                  "@id": "https://vizagfinserv.com/#organization",
+                  "name": "VizagFinServ",
+                  "legalName": "VizagFinServ",
+                  "alternateName": "Vizag FinServ",
+                  "url": "https://vizagfinserv.com",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://vizagfinserv.com/images/og-image.jpg",
+                    "width": 1200,
+                    "height": 630,
+                  },
+                  "image": "https://vizagfinserv.com/images/og-image.jpg",
+                  "description":
+                    "AMFI-Registered Mutual Fund Distributor (ARN 138117, EUIN E233588) helping 100+ families invest with clarity, discipline, and a long-term goal-based approach since 2018 in Visakhapatnam.",
+                  "telephone": "+91 90878 59350",
+                  "email": "funds844@gmail.com",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Visakhapatnam",
+                    "addressRegion": "Andhra Pradesh",
+                    "postalCode": "530001",
+                    "addressCountry": "IN",
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 17.6868,
+                    "longitude": 83.2185,
+                  },
+                  "founder": {
+                    "@id": "https://vizagfinserv.com/#founder",
+                  },
+                  "employee": [
+                    {
+                      "@id": "https://vizagfinserv.com/#founder",
+                    },
+                  ],
+                  "areaServed": [
+                    {
+                      "@type": "City",
+                      "name": "Visakhapatnam",
+                    },
+                    {
+                      "@type": "Country",
+                      "name": "India",
+                    },
+                  ],
+                  "serviceType": "Mutual Fund Distribution",
+                  "priceRange": "Free for Investors (Distributor commission paid by AMCs)",
+                  "currenciesAccepted": "INR",
+                  "paymentAccepted": "Cheque, Net Banking, UPI, Auto-Debit (NACH)",
+                  "foundingDate": "2018",
+                  "knowsAbout": [
+                    "Mutual Funds",
+                    "Systematic Investment Plans (SIP)",
+                    "Systematic Withdrawal Plans (SWP)",
+                    "Retirement Planning",
+                    "Portfolio Reviews",
+                    "Goal-Based Wealth Creation",
+                  ],
+                  "contactPoint": [
+                    {
+                      "@type": "ContactPoint",
+                      "telephone": "+91-90878-59350",
+                      "contactType": "customer service",
+                      "areaServed": "IN",
+                      "availableLanguage": ["English", "Telugu", "Hindi"],
+                    },
+                  ],
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://vizagfinserv.com/#founder",
+                  "name": "Sasanapuri Sreekar",
+                  "jobTitle": "Founder & AMFI-Registered Mutual Fund Distributor",
+                  "identifier": "ARN-138117",
+                  "worksFor": {
+                    "@id": "https://vizagfinserv.com/#organization",
+                  },
+                  "url": "https://vizagfinserv.com/about",
+                  "image": "https://vizagfinserv.com/images/about-portrait.webp",
+                  "knowsAbout": [
+                    "Mutual Funds",
+                    "Goal-Based Financial Planning",
+                    "SIP Strategies",
+                    "Portfolio Diversification",
+                    "Asset Allocation",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://vizagfinserv.com/#website",
+                  "url": "https://vizagfinserv.com",
+                  "name": "VizagFinServ",
+                  "description": "AMFI-Registered Mutual Fund Distributor in Visakhapatnam",
+                  "publisher": {
+                    "@id": "https://vizagfinserv.com/#organization",
+                  },
+                  "inLanguage": "en-IN",
+                },
+              ],
             }),
           }}
         />

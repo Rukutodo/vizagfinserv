@@ -6,10 +6,44 @@ import { CONTACT, OFFICE_HOURS } from '@/lib/constants';
 import { PhoneIcon, MailIcon, MapPinIcon, ArrowRightIcon } from '@/components/ui/Icons';
 
 export const metadata: Metadata = {
-  title: 'Contact',
+  title: 'Contact VizagFinServ — Start Your Investment Conversation',
   description:
-    'Get in touch with VizagFinServ for a no-obligation conversation about your mutual fund investment goals. Based in Visakhapatnam, Andhra Pradesh.',
+    'Reach VizagFinServ (Sasanapuri Sreekar) for a no-obligation discussion about your mutual fund investment goals. Call, email, WhatsApp, or visit us in Visakhapatnam, Andhra Pradesh. AMFI-Registered MFD (ARN 138117).',
+  keywords: [
+    'contact VizagFinServ',
+    'mutual fund distributor contact Vizag',
+    'investment consultation Visakhapatnam',
+    'VizagFinServ phone number',
+    'mutual fund distributor near me',
+    'financial planning consultation',
+    'ARN 138117 contact',
+  ],
+  openGraph: {
+    title: 'Contact VizagFinServ — Let\'s Talk About Your Financial Goals',
+    description:
+      'Call, email, WhatsApp, or visit. Start a no-obligation conversation about your mutual fund investment goals with an AMFI-Registered MFD in Visakhapatnam.',
+    url: 'https://vizagfinserv.com/contact',
+    siteName: 'VizagFinServ',
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Contact VizagFinServ — Visakhapatnam',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact VizagFinServ — Mutual Fund Distributor in Visakhapatnam',
+    description: 'Reach out for a no-obligation discussion about your investment goals. Call, email, or WhatsApp.',
+    images: ['/images/og-image.jpg'],
+  },
+  alternates: { canonical: 'https://vizagfinserv.com/contact' },
 };
+
 
 function WhatsAppGlyph({ className = 'w-5 h-5' }: { className?: string }) {
   return (

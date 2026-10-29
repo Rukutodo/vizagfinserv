@@ -2,9 +2,20 @@ import type { Metadata } from 'next';
 import PageHero from '@/components/PageHero';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy',
-  description: 'Privacy Policy for VizagFinServ.',
+  title: 'Privacy Policy — How We Protect Your Data',
+  description:
+    'Read VizagFinServ\'s Privacy Policy to understand how we collect, use, store, and safeguard your personal and financial information. AMFI-Registered Mutual Fund Distributor (ARN 138117), Visakhapatnam.',
+  openGraph: {
+    title: 'Privacy Policy — VizagFinServ',
+    description: 'How VizagFinServ collects, uses, and protects your personal information.',
+    url: 'https://vizagfinserv.com/privacy-policy',
+    type: 'website',
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'VizagFinServ' }],
+  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: 'https://vizagfinserv.com/privacy-policy' },
 };
+
 
 export default function PrivacyPolicyPage() {
   return (

@@ -3,9 +3,28 @@ import PageHero from '@/components/PageHero';
 import { CONTACT } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Commission Disclosure',
-  description: 'Commission disclosure and compliance details for VizagFinServ.',
+  title: 'Commission Disclosure — Transparent Fee Structure',
+  description:
+    'Full commission and compensation disclosure for VizagFinServ (Sasanapuri Sreekar, ARN 138117). Understand how mutual fund distributors are compensated by AMCs, the difference between regular and direct plans, and our commitment to transparency.',
+  keywords: [
+    'mutual fund commission disclosure',
+    'distributor commission India',
+    'regular vs direct plan commission',
+    'AMFI commission transparency',
+    'VizagFinServ fees',
+    'ARN 138117 disclosure',
+  ],
+  openGraph: {
+    title: 'Commission Disclosure — VizagFinServ',
+    description: 'Full transparency on how we are compensated as an AMFI-Registered Mutual Fund Distributor.',
+    url: 'https://vizagfinserv.com/commission-disclosure',
+    type: 'website',
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'VizagFinServ' }],
+  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: 'https://vizagfinserv.com/commission-disclosure' },
 };
+
 
 export default function CommissionDisclosurePage() {
   return (

@@ -6,9 +6,37 @@ import AdditionalServices from '@/components/sections/services/AdditionalService
 import ServicesCTA from '@/components/sections/services/ServicesCTA';
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'Mutual Fund Distribution Services — SIP, Lumpsum, SWP & Portfolio Reviews',
   description:
-    'In-depth mutual fund distribution services including goal-based SIP planning, comprehensive portfolio reviews, STP/SWP structuring, and specialized investment funds.',
+    'Explore VizagFinServ\'s full suite of mutual fund distribution services: goal-based SIP planning, lumpsum investments, STP/SWP structuring, portfolio reviews, and Specialized Investment Funds (SIF). Access 24+ AMC partners through one trusted distributor in Visakhapatnam.',
+  keywords: [
+    'mutual fund services Vizag',
+    'SIP planning Visakhapatnam',
+    'lumpsum investment distributor',
+    'STP SWP structuring',
+    'portfolio review mutual fund',
+    'Specialized Investment Fund SIF',
+    'goal-based investing services',
+    'fund selection distributor India',
+    'VizagFinServ services',
+  ],
+  openGraph: {
+    title: 'Mutual Fund Services — Goal-Based SIP, Lumpsum, SWP & More',
+    description:
+      'From SIP planning and lumpsum deployment to STP/SWP structuring and annual portfolio reviews — VizagFinServ distributes across 24+ AMC partners with a goal-first approach.',
+    url: 'https://vizagfinserv.com/services',
+    siteName: 'VizagFinServ',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: '/images/services-hero.jpg', width: 1200, height: 630, alt: 'VizagFinServ Mutual Fund Distribution Services' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mutual Fund Services — SIP, Lumpsum, SWP & Reviews | VizagFinServ',
+    description: 'Goal-based SIP, lumpsum, STP/SWP, and portfolio review services from an AMFI-Registered MFD in Visakhapatnam.',
+    images: ['/images/services-hero.jpg'],
+  },
+  alternates: { canonical: 'https://vizagfinserv.com/services' },
 };
 
 export default function ServicesPage() {
@@ -22,4 +50,3 @@ export default function ServicesPage() {
     </>
   );
 }
-

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import SectionWrapper from "@/components/ui/SectionWrapper";
@@ -80,8 +81,30 @@ const tabs = [
   },
 ];
 
-export default function CalculatorsPage() {
+function CalculatorsInner() {
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState("sip");
+
+  // Synchronize tab with query string e.g. /calculators?tab=swp or ?tab=step-up
+  useEffect(() => {
+    const tabParam = searchParams.get("tab")?.toLowerCase();
+    if (!tabParam) return;
+
+    const normalized = tabParam === "step-up" ? "stepup" : tabParam;
+    const exists = tabs.some((t) => t.id === normalized);
+    if (exists) {
+      setActiveTab(normalized);
+    }
+  }, [searchParams]);
+
+  const handleTabChange = (tabId: string) => {
+    setActiveTab(tabId);
+    if (typeof window !== "undefined") {
+      const url = new URL(window.location.href);
+      url.searchParams.set("tab", tabId);
+      window.history.replaceState(null, "", url.toString());
+    }
+  };
 
   return (
     <main className="min-h-screen bg-brand-100 pt-24 pb-20 text-neutral-900 relative overflow-hidden">
@@ -119,7 +142,7 @@ export default function CalculatorsPage() {
                   transition={{ delay: 0.25 + i * 0.06, duration: 0.35, ease: "easeOut" }}
                   whileHover={{ y: -1 }}
                   whileTap={{ scale: 0.97 }}
-                  onClick={() => setActiveTab(tab.id)}
+                  onClick={() => handleTabChange(tab.id)}
                   className={`flex items-center justify-center gap-2 px-3.5 md:px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 cursor-pointer ${
                     isActive
                       ? "bg-brand-900 text-white shadow-md ring-2 ring-brand-900"
@@ -160,7 +183,22 @@ export default function CalculatorsPage() {
             {activeTab === "emi" && <EMICalculator />}
           </motion.div>
         </AnimatePresence>
+
+        {/* Compliance Disclaimer */}
+        <div className="mt-16 max-w-4xl mx-auto text-center">
+          <p className="text-xs text-neutral-400 leading-relaxed">
+            <strong className="text-neutral-500">Disclaimer:</strong> Mutual Fund investments are subject to market risks, read all scheme related documents carefully. The calculations shown are for illustrative and educational purposes only and do not represent actual returns or guarantee future results. Estimated returns are based on projected annual growth rates. VizagFinServ (ARN 138117) is an AMFI-Registered Mutual Fund Distributor and not a SEBI-Registered Investment Adviser.
+          </p>
+        </div>
       </SectionWrapper>
     </main>
+  );
+}
+
+export default function CalculatorsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-brand-100 pt-24 pb-20 flex items-center justify-center text-neutral-500 font-medium">Loading Calculators...</div>}>
+      <CalculatorsInner />
+    </Suspense>
   );
 }

@@ -39,7 +39,7 @@ export default function AboutContactCTA() {
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-brand-300 mb-3">
               <MapPinIcon className="w-5 h-5" />
             </div>
-            <p className="text-xs text-brand-300 uppercase tracking-wider mb-1">Advisor &amp; Location</p>
+            <p className="text-xs text-brand-300 uppercase tracking-wider mb-1">Distributor &amp; Location</p>
             <p className="text-sm font-semibold text-white">Sasanapuri Sreekar</p>
             <p className="text-xs text-brand-200">{CONTACT.location}</p>
           </motion.div>
