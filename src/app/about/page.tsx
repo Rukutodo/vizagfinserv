@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     siteName: 'VizagFinServ',
     locale: 'en_IN',
     type: 'profile',
-    images: [{ url: '/images/about-portrait.webp', width: 1200, height: 630, alt: 'Sasanapuri Sreekar — VizagFinServ' }],
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'About VizagFinServ' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About VizagFinServ — Sasanapuri Sreekar, AMFI-Registered MFD',
     description: 'Goal-based mutual fund distribution for 100+ families in Visakhapatnam since 2018. Meet the distributor.',
-    images: ['/images/about-portrait.webp'],
+    images: ['/images/og-image.jpg'],
   },
   alternates: { canonical: 'https://vizagfinserv.com/about' },
 };
@@ -48,7 +48,7 @@ export default function AboutPage() {
         subtitle="Every family we meet is working toward something specific: a child's education, a first home, or a secure retirement. We start with that goal, then build a disciplined investing approach around it."
       />
       <BusinessSnapshot />
-      <AboutSreekar linkToPage={false} />
+      <AboutSreekar linkToPage={false} showImage={false} />
       <WhyWorkWithUs />
       <AboutProcess />
       <AboutScopeBento />
