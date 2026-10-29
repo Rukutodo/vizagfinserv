@@ -11,8 +11,8 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: "/logo.svg",
-        destination: "/Logo.svg",
+        source: "/Logo.svg",
+        destination: "/logo.svg",
       },
     ];
   },

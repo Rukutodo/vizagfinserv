@@ -20,7 +20,7 @@ export default function Footer() {
             >
               <div className="inline-flex items-center justify-center bg-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-md shadow-black/20 border border-white/20 group-hover:shadow-lg transition-all duration-300">
                 <Image
-                  src="/Logo.svg"
+                  src="/logo.svg"
                   alt="VizagFinServ"
                   width={150}
                   height={42}

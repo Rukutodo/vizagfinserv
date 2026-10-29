@@ -55,7 +55,7 @@ export default function Header() {
             aria-label="VizagFinServ Home"
           >
             <Image
-              src="/Logo.svg"
+              src="/logo.svg"
               alt="VizagFinServ"
               width={160}
               height={44}
