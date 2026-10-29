@@ -48,7 +48,7 @@ export default function AboutPage() {
         subtitle="Every family we meet is working toward something specific: a child's education, a first home, or a secure retirement. We start with that goal, then build a disciplined investing approach around it."
       />
       <BusinessSnapshot />
-      <AboutSreekar linkToPage={false} showImage={false} />
+      <AboutSreekar linkToPage={false} />
       <WhyWorkWithUs />
       <AboutProcess />
       <AboutScopeBento />
