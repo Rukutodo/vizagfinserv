@@ -6,31 +6,17 @@ import SectionHeading from '@/components/ui/SectionHeading';
 
 const TESTIMONIALS = [
   {
-    name: 'Rajesh K.',
-    role: 'Business Owner',
+    name: 'Debasish Ray',
+    role: 'Retired (Age 66)',
     quote:
-      'Sreekar helped us plan our children\'s education fund and retirement corpus with a clear, goal-based approach. His patience in explaining every detail gave us real confidence in our decisions.',
+      'Services provided are very professional, yet extremely homely. Prompt response is unmatched. They suggest the investment portfolio best suited to our needs after carefully analysing our requirements. Seamless good experience all through.',
     rating: 5,
   },
   {
-    name: 'Priya M.',
-    role: 'IT Professional',
+    name: 'KV Ramana Rao',
+    role: 'Retired (Age 65)',
     quote:
-      'What I appreciate most is the transparency. There are no hidden agendas, just honest advice that always puts our family\'s interests first. We\'ve been investing with VizagFinServ for over 3 years now.',
-    rating: 5,
-  },
-  {
-    name: 'Venkat R.',
-    role: 'Retired Government Officer',
-    quote:
-      'After retirement, I needed someone trustworthy to manage my savings wisely. Sreekar\'s disciplined approach and regular reviews have given me complete peace of mind.',
-    rating: 5,
-  },
-  {
-    name: 'Sunitha D.',
-    role: 'Doctor',
-    quote:
-      'I was new to mutual funds and had many questions. Sreekar took the time to walk me through everything, from SIPs to goal planning. His multi-generational experience really shows.',
+      'Excellent guidance, hassle-free transactions, personalised service, very professional service, highly up to date with latest market scenario. Overall it is a very good experience.',
     rating: 5,
   },
 ];
@@ -66,46 +52,48 @@ export default function Testimonials() {
         light={true}
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
         {TESTIMONIALS.map((testimonial, i) => (
           <motion.div
             key={testimonial.name}
             initial={{ opacity: 0, y: 35, filter: 'blur(4px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            whileHover={{ y: -8, scale: 1.025 }}
+            whileHover={{ y: -6, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative p-6 md:p-8 rounded-2xl bg-white shadow-xl shadow-black/20 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-900/40 transition-all duration-300"
+            className="group relative p-7 md:p-9 rounded-2xl bg-white shadow-xl shadow-black/20 hover:shadow-2xl hover:shadow-brand-900/40 transition-all duration-300 flex flex-col justify-between"
           >
-            {/* Quote icon */}
-            <svg
-              className="absolute top-5 right-5 w-10 h-10 text-brand-100/60"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391C0 7.905 3.748 4.039 9 3l.996 2.151C7.563 6.068 5.996 8.789 5.996 11h4v10H0z" />
-            </svg>
+            <div>
+              {/* Quote icon */}
+              <svg
+                className="absolute top-6 right-6 w-10 h-10 text-brand-100/60"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391C0 7.905 3.748 4.039 9 3l.996 2.151C7.563 6.068 5.996 8.789 5.996 11h4v10H0z" />
+              </svg>
 
-            {/* Stars */}
-            <StarRating rating={testimonial.rating} />
+              {/* Stars */}
+              <StarRating rating={testimonial.rating} />
 
-            {/* Quote */}
-            <p className="mt-4 text-sm md:text-base text-neutral-700 leading-relaxed italic">
-              &ldquo;{testimonial.quote}&rdquo;
-            </p>
+              {/* Quote */}
+              <p className="mt-5 text-sm md:text-base text-neutral-700 leading-relaxed italic">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+            </div>
 
             {/* Author */}
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-6 pt-5 border-t border-neutral-100 flex items-center gap-3.5">
               {/* Avatar initial */}
-              <div className="w-10 h-10 rounded-full bg-brand-900 text-white flex items-center justify-center text-sm font-bold shrink-0">
+              <div className="w-11 h-11 rounded-full bg-brand-900 text-white flex items-center justify-center text-sm font-bold shrink-0">
                 {testimonial.name.charAt(0)}
               </div>
               <div>
-                <p className="text-sm font-semibold text-brand-900">
+                <p className="text-base font-semibold text-brand-900">
                   {testimonial.name}
                 </p>
-                <p className="text-xs text-neutral-500">{testimonial.role}</p>
+                <p className="text-xs text-neutral-500 font-medium">{testimonial.role}</p>
               </div>
             </div>
           </motion.div>
